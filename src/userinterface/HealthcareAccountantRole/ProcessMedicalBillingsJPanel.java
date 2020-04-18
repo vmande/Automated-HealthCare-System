@@ -10,16 +10,22 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.AccountantOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.AccountantBillingRequest;
+import Business.WorkQueue.GovernmentFundRequest;
 import Business.WorkQueue.InsuranceWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import com.sun.javafx.scene.control.skin.VirtualFlow;
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-
+/**
+ *
+ * @author Lionel
+ */
 public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
@@ -63,9 +69,9 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(30, 123, 123));
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        processRequestBtn.setBackground(new java.awt.Color(255, 204, 51));
+        processRequestBtn.setBackground(new java.awt.Color(0, 153, 255));
         processRequestBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         processRequestBtn.setText("Process Request");
         processRequestBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +80,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
             }
         });
 
-        workRequestJTable.setBackground(new java.awt.Color(204, 255, 153));
+        workRequestJTable.setBackground(new java.awt.Color(0, 153, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -117,7 +123,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        btnAssignToMe.setBackground(new java.awt.Color(255, 204, 51));
+        btnAssignToMe.setBackground(new java.awt.Color(0, 153, 255));
         btnAssignToMe.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAssignToMe.setText("AssignToMe");
         btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +132,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
             }
         });
 
-        backJButton.setBackground(new java.awt.Color(255, 204, 51));
+        backJButton.setBackground(new java.awt.Color(0, 153, 255));
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         backJButton.setText("<<Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -136,10 +142,9 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Accountant: Patient Billing Area");
 
-        tblInsurance.setBackground(new java.awt.Color(204, 255, 153));
+        tblInsurance.setBackground(new java.awt.Color(0, 153, 255));
         tblInsurance.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -183,11 +188,9 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tblInsurance);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Insurance Claim Status Table");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Patient Billing Table");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -199,15 +202,13 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
+                                .addContainerGap()
                                 .addComponent(backJButton)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(117, 117, 117)
-                                        .addComponent(jLabel1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(245, 245, 245)
-                                        .addComponent(jLabel3))))
+                                .addGap(157, 157, 157)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(372, 372, 372)
+                                .addComponent(jLabel3))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(274, 274, 274)
                                 .addComponent(btnAssignToMe)
@@ -225,15 +226,15 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(backJButton))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)))
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(backJButton)))
+                .addGap(16, 16, 16)
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)

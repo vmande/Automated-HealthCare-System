@@ -2,11 +2,17 @@ package userinterface.AdministrativeRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.GovernmentEnterprise;
+import Business.Enterprise.InsuranceCompanyEnterprise;
+import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
-
+/**
+ *
+ * @author raunak
+ */
 public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
@@ -25,6 +31,9 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
         this.ecoSystem = ecoSystem;
         valueLabel.setText(enterprise.getName());
 
+        if (enterprise instanceof GovernmentEnterprise || enterprise instanceof InsuranceCompanyEnterprise) {
+            btnRequestFunds.setVisible(false);
+        }
     }
 
     /**
@@ -41,8 +50,9 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
         manageOrganizationJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
+        btnRequestFunds = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(30, 123, 123));
+        setBackground(new java.awt.Color(102, 153, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -87,6 +97,16 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 130, 30));
+
+        btnRequestFunds.setBackground(new java.awt.Color(255, 153, 0));
+        btnRequestFunds.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnRequestFunds.setText("Request Funds from Government");
+        btnRequestFunds.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRequestFundsActionPerformed(evt);
+            }
+        });
+        add(btnRequestFunds, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 260, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed
@@ -116,8 +136,16 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_manageOrganizationJButtonActionPerformed
 
+    private void btnRequestFundsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestFundsActionPerformed
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        userProcessContainer.add("RequestFundsJPanel", new RequestFundsJPanel(userProcessContainer, enterprise, userAccount, ecoSystem));
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnRequestFundsActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRequestFunds;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton manageEmployeeJButton;

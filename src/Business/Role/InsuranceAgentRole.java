@@ -10,11 +10,16 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.InsuranceAgentOrganization;
 import Business.Organization.Organization;
+import Business.Organization.TreasurerOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.GovernmentTreasurerRole.TreasurerWorkAreaJPanel;
 import userinterface.InsuranceAgentRole.InsuranceAgentWorkAreaJPanel;
 
-
+/**
+ *
+ * @author ankit
+ */
 public class InsuranceAgentRole extends Role{
 
     @Override

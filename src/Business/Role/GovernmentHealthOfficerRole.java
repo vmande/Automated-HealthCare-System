@@ -8,13 +8,18 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Organization.DoctorOrganization;
 import Business.Organization.HealthCareOfficerOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.DoctorRole.DoctorWorkAreaJPanel;
 import userinterface.HealthcareOfficerRole.OfficerWorkAreaJPanel;
 
-
+/**
+ *
+ * @author ankit
+ */
 public class GovernmentHealthOfficerRole extends Role{
 
     @Override
