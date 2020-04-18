@@ -68,7 +68,9 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         txtCoverage = new javax.swing.JTextField();
 
-        btnDisburse.setBackground(new java.awt.Color(255, 204, 51));
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        btnDisburse.setBackground(new java.awt.Color(0, 153, 255));
         btnDisburse.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnDisburse.setText("Disburse Amount");
         btnDisburse.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +79,7 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
             }
         });
 
-        btnReject.setBackground(new java.awt.Color(255, 204, 51));
+        btnReject.setBackground(new java.awt.Color(0, 153, 255));
         btnReject.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnReject.setText("Reject Claim");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
@@ -87,14 +89,12 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Insurance Finance Request Process area ");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Policy Number");
 
-        backBtn.setBackground(new java.awt.Color(255, 204, 51));
+        backBtn.setBackground(new java.awt.Color(0, 153, 255));
         backBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         backBtn.setText("<<Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -104,23 +104,18 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("policyName");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Billing Amount");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Claim Amount");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("SSN");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Conerage%");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
