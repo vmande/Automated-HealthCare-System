@@ -207,7 +207,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         add(backJButton);
         backJButton.setBounds(10, 11, 81, 23);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\Documents\\Masters\\AED\\Project material\\Funds.gif")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Funds.gif"))); // NOI18N
         add(jLabel6);
         jLabel6.setBounds(30, 0, 630, 290);
     }// </editor-fold>//GEN-END:initComponents

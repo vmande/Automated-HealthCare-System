@@ -161,7 +161,7 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
         backJButton.setBounds(29, 11, 73, 23);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\Documents\\Masters\\AED\\Project material\\doctor2.gif")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/doctor2.gif"))); // NOI18N
         add(jLabel2);
         jLabel2.setBounds(610, -100, 360, 1020);
     }// </editor-fold>//GEN-END:initComponents
