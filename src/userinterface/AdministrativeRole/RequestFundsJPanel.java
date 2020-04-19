@@ -111,7 +111,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
             }
         });
         add(txtLocation);
-        txtLocation.setBounds(165, 67, 141, 20);
+        txtLocation.setBounds(165, 67, 141, 23);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Population:");
@@ -124,7 +124,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
             }
         });
         add(txtpopulation);
-        txtpopulation.setBounds(165, 105, 143, 20);
+        txtpopulation.setBounds(165, 105, 143, 23);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Amount:");
@@ -137,7 +137,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
             }
         });
         add(txtAmount);
-        txtAmount.setBounds(165, 143, 143, 20);
+        txtAmount.setBounds(165, 143, 143, 23);
 
         btnSendFundRequest.setBackground(new java.awt.Color(0, 153, 255));
         btnSendFundRequest.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N

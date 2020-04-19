@@ -145,14 +145,14 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
             }
         });
         add(txtConsultationCharges);
-        txtConsultationCharges.setBounds(388, 258, 82, 21);
+        txtConsultationCharges.setBounds(388, 258, 82, 23);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Medication Charges (USD):");
         add(jLabel5);
         jLabel5.setBounds(215, 325, 163, 21);
         add(txtMedicationCharges);
-        txtMedicationCharges.setBounds(388, 323, 82, 21);
+        txtMedicationCharges.setBounds(388, 323, 82, 23);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel11.setText("Lab Test Charges (USD) :");
@@ -165,14 +165,14 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
             }
         });
         add(txtLabCharges);
-        txtLabCharges.setBounds(388, 290, 82, 21);
+        txtLabCharges.setBounds(388, 290, 82, 23);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setText("Miscellaneous Charges (USD):");
         add(jLabel12);
         jLabel12.setBounds(199, 361, 179, 17);
         add(txtMiscellaneousCharges);
-        txtMiscellaneousCharges.setBounds(388, 359, 82, 21);
+        txtMiscellaneousCharges.setBounds(388, 359, 82, 23);
 
         btnSendBillingRequest.setBackground(new java.awt.Color(0, 153, 255));
         btnSendBillingRequest.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N

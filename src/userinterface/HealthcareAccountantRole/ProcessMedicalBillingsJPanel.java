@@ -142,7 +142,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Accountant: Patient Billing Area");
+        jLabel1.setText("Receptionist: Patient Billing Area");
 
         tblInsurance.setBackground(new java.awt.Color(0, 153, 255));
         tblInsurance.setModel(new javax.swing.table.DefaultTableModel(
@@ -214,7 +214,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
                                 .addComponent(btnAssignToMe)
                                 .addGap(69, 69, 69)
                                 .addComponent(processRequestBtn)))
-                        .addGap(0, 268, Short.MAX_VALUE))
+                        .addGap(0, 255, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane2))
                 .addContainerGap())
