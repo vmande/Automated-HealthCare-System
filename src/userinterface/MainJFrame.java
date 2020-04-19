@@ -102,7 +102,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel2.setText("User Account Login ");
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\Documents\\Masters\\AED\\Project material\\healthcare logo2.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/healthcare logo2.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -166,7 +166,7 @@ public class MainJFrame extends javax.swing.JFrame {
         imageLbl.setBackground(new java.awt.Color(255, 255, 255));
         imageLbl.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         imageLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\ezgif.com-resize.gif")); // NOI18N
+        imageLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ezgif.com-resize.gif"))); // NOI18N
         imageLbl.setToolTipText("");
         imageLbl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         imageLbl.setMaximumSize(new java.awt.Dimension(500, 500));

@@ -3,11 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Homeworks/healthcare-next-door/HealthCareNextDoor/src/userinterface/HealthcareAccountantRole/CreateAppointmentJPanel.java</file>
-            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Homeworks/healthcare-next-door/HealthCareNextDoor/src/userinterface/HealthcareAccountantRole/ProcessMedicalBillingsJPanel.java</file>
-            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Homeworks/healthcare-next-door/HealthCareNextDoor/src/userinterface/HealthcareAccountantRole/AccountantProcessRequestJPanel.java</file>
-            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Homeworks/healthcare-next-door/HealthCareNextDoor/src/userinterface/HealthcareAccountantRole/AccountantWorkAreaJPanel.java</file>
-            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Homeworks/healthcare-next-door/HealthCareNextDoor/src/userinterface/MainJFrame.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/DoctorRole/RequestBillingJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/GovernmentSecretaryRole/SecretaryWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/DoctorRole/ViewPatientJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/AdministrativeRole/EnterpriseAdminWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/HealthcareOfficerRole/OfficerWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/HealthcareOfficerRole/OfficerProcessWorkRequestJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/GovernmentTreasurerRole/TreasurerProcessWorkRequestJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/InsuranceAgentRole/AddNewPolicyHolderJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/AdministrativeRole/RequestFundsJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/HealthcareAccountantRole/ProcessMedicalBillingsJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/SystemAdminWorkArea/ManageEnterpriseJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/InsurancePolicyPlannerRole/InsurancePolicyPlannerWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/GovernmentTreasurerRole/TreasurerWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/DoctorRole/ProvidePrescriptionJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/AdministrativeRole/ManageEmployeeJPanel.java</file>
+            <file>file:/C:/Users/hp/Desktop/Documents/Masters/AED/Assignments/Exception-Handlers/src/userinterface/GovernmentSecretaryRole/SecretaryProcessWorkRequestJPanel.java</file>
         </group>
     </open-files>
 </project-private>
