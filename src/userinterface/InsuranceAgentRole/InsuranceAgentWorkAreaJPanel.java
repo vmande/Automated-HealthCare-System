@@ -76,7 +76,7 @@ public class InsuranceAgentWorkAreaJPanel extends javax.swing.JPanel {
         add(btnProcessInsuranceRequests);
         btnProcessInsuranceRequests.setBounds(490, 380, 200, 39);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\Documents\\Masters\\AED\\Project material\\health insurance.gif")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/health insurance.gif"))); // NOI18N
         add(jLabel2);
         jLabel2.setBounds(1, 5, 690, 430);
     }// </editor-fold>//GEN-END:initComponents

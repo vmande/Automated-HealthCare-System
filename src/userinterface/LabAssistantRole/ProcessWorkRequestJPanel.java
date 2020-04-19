@@ -84,7 +84,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         jLabel2.setBounds(230, 20, 195, 29);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\Documents\\Masters\\AED\\Project material\\lab2.gif")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lab2.gif"))); // NOI18N
         add(jLabel3);
         jLabel3.setBounds(-10, 0, 740, 450);
     }// </editor-fold>//GEN-END:initComponents

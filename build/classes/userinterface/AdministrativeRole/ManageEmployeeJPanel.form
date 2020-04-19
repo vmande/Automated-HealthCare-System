@@ -62,7 +62,7 @@
                       <Component id="jLabel5" min="-2" pref="803" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -99,7 +99,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="addJButton" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jLabel5" pref="347" max="32767" attributes="0"/>
+              <Component id="jLabel5" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

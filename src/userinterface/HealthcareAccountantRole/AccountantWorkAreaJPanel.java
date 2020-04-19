@@ -72,7 +72,7 @@ public class AccountantWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\Documents\\Masters\\AED\\Project material\\reception.gif")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/reception.gif"))); // NOI18N
         jLabel1.setText("Patient Details");
 
         btnCreateAppointment.setBackground(new java.awt.Color(0, 153, 255));

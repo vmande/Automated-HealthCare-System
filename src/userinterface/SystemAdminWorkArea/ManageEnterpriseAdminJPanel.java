@@ -228,7 +228,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel2.setBounds(205, 27, 305, 29);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\Documents\\Masters\\AED\\Project material\\admin4.gif")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin4.gif"))); // NOI18N
         add(jLabel4);
         jLabel4.setBounds(20, 160, 680, 310);
     }// </editor-fold>//GEN-END:initComponents

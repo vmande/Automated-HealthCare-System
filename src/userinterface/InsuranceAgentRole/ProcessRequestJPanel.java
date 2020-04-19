@@ -151,7 +151,7 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
         add(btnBack);
         btnBack.setBounds(10, 11, 81, 25);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\Documents\\Masters\\AED\\Project material\\insurance claim.gif")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/insurance claim.gif"))); // NOI18N
         add(jLabel7);
         jLabel7.setBounds(-30, -50, 800, 600);
     }// </editor-fold>//GEN-END:initComponents

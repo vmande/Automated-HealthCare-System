@@ -130,7 +130,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         add(processJButton);
         processJButton.setBounds(400, 130, 140, 40);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\Documents\\Masters\\AED\\Project material\\lab.gif")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lab.gif"))); // NOI18N
         add(jLabel2);
         jLabel2.setBounds(0, 130, 740, 400);
     }// </editor-fold>//GEN-END:initComponents
