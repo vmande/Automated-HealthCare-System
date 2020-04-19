@@ -91,14 +91,12 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         txtFundsReceived = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(30, 123, 123));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         lblRequestFunds.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblRequestFunds.setForeground(new java.awt.Color(255, 255, 255));
         lblRequestFunds.setText("Request Funds");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Location: ");
 
         txtLocation.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +106,6 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Population:");
 
         txtpopulation.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +115,6 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Amount:");
 
         txtAmount.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +123,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSendFundRequest.setBackground(new java.awt.Color(255, 204, 51));
+        btnSendFundRequest.setBackground(new java.awt.Color(0, 153, 255));
         btnSendFundRequest.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSendFundRequest.setText("Send Fund Request");
         btnSendFundRequest.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +132,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
             }
         });
 
-        workRequestJTable.setBackground(new java.awt.Color(204, 255, 153));
+        workRequestJTable.setBackground(new java.awt.Color(0, 153, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -166,16 +162,14 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(workRequestJTable);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("All Funds Requests");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Total Funds Received :");
 
         txtFundsReceived.setEditable(false);
 
-        backJButton.setBackground(new java.awt.Color(255, 204, 51));
+        backJButton.setBackground(new java.awt.Color(0, 153, 255));
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -221,25 +215,24 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(228, 228, 228)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(backJButton)
-                                .addGap(131, 131, 131)
-                                .addComponent(lblRequestFunds, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(307, 307, 307)
-                        .addComponent(btnSendFundRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnSendFundRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(backJButton)
+                        .addGap(145, 145, 145)
+                        .addComponent(lblRequestFunds, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblRequestFunds, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(backJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(backJButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
