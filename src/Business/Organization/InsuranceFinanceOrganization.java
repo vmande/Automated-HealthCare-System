@@ -9,6 +9,10 @@ import Business.Role.InsuranceFinanceManagerRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Lionel
+ */
 public class InsuranceFinanceOrganization extends Organization {
 
     public InsuranceFinanceOrganization() {

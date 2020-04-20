@@ -5,7 +5,10 @@
  */
 package Business.WorkQueue;
 
-
+/**
+ *
+ * @author ankit
+ */
 public class GovernmentFundRequest extends WorkRequest {
 
     private String location;

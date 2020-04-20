@@ -8,7 +8,6 @@ package Business.Insurance;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class InsurancePolicyDirectory {
 
     private List<Insurance> policies = new ArrayList<>();

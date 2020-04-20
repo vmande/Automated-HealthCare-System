@@ -7,6 +7,9 @@ package userinterface.InsuranceFinanceRole;
 
 import Business.Enterprise.Enterprise;
 import Business.UserAccount.UserAccount;
+
+import Business.WorkQueue.GovernmentFundRequest;
+
 import Business.WorkQueue.InsuranceWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -64,7 +67,13 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         txtCoverage = new javax.swing.JTextField();
 
-        btnDisburse.setBackground(new java.awt.Color(255, 204, 51));
+        jLabel2 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
+
+        btnDisburse.setBackground(new java.awt.Color(0, 153, 255));
+
         btnDisburse.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnDisburse.setText("Disburse Amount");
         btnDisburse.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +82,11 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
             }
         });
 
-        btnReject.setBackground(new java.awt.Color(255, 204, 51));
+        add(btnDisburse);
+        btnDisburse.setBounds(130, 316, 129, 32);
+
+        btnReject.setBackground(new java.awt.Color(0, 153, 255));
+
         btnReject.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnReject.setText("Reject Claim");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
@@ -82,15 +95,22 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
             }
         });
 
+        add(btnReject);
+        btnReject.setBounds(291, 316, 103, 32);
+
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Insurance Finance Request Process area ");
+        add(jLabel3);
+        jLabel3.setBounds(130, 17, 488, 29);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(0, 0, 204));
         jLabel4.setText("Policy Number");
+        add(jLabel4);
+        jLabel4.setBounds(154, 91, 86, 15);
 
-        backBtn.setBackground(new java.awt.Color(255, 204, 51));
+        backBtn.setBackground(new java.awt.Color(0, 153, 255));
+
         backBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         backBtn.setText("<<Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -99,104 +119,56 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
             }
         });
 
+        add(backBtn);
+        backBtn.setBounds(10, 23, 77, 29);
+        add(txtPolicyNumber);
+        txtPolicyNumber.setBounds(278, 86, 116, 23);
+        add(txtPolicyName);
+        txtPolicyName.setBounds(278, 209, 116, 23);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 204));
         jLabel1.setText("policyName");
+        add(jLabel1);
+        jLabel1.setBounds(172, 211, 68, 15);
+        add(txtBillingAmount);
+        txtBillingAmount.setBounds(278, 247, 116, 23);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(0, 0, 204));
         jLabel6.setText("Billing Amount");
+        add(jLabel6);
+        jLabel6.setBounds(150, 249, 90, 15);
+        add(txtClaimAmount);
+        txtClaimAmount.setBounds(278, 285, 116, 23);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(0, 0, 204));
         jLabel7.setText("Claim Amount");
+        add(jLabel7);
+        jLabel7.setBounds(154, 287, 86, 15);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(0, 0, 204));
         jLabel8.setText("SSN");
+        add(jLabel8);
+        jLabel8.setBounds(216, 129, 24, 15);
+        add(txtSSN);
+        txtSSN.setBounds(278, 124, 116, 23);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setForeground(new java.awt.Color(0, 0, 204));
         jLabel9.setText("Conerage%");
+        add(jLabel9);
+        jLabel9.setBounds(168, 176, 72, 15);
+        add(txtCoverage);
+        txtCoverage.setBounds(278, 171, 116, 23);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(backBtn)
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnDisburse)
-                            .addGap(32, 32, 32)
-                            .addComponent(btnReject))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel6)
-                            .addGap(38, 38, 38)
-                            .addComponent(txtBillingAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addGap(38, 38, 38)
-                            .addComponent(txtClaimAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(38, 38, 38)
-                            .addComponent(txtPolicyName, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addGap(38, 38, 38)
-                            .addComponent(txtPolicyNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel8)
-                            .addGap(38, 38, 38)
-                            .addComponent(txtSSN, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel9)
-                            .addGap(38, 38, 38)
-                            .addComponent(txtCoverage, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel3))
-                .addContainerGap(117, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4)
-                    .addComponent(txtPolicyNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8)
-                    .addComponent(txtSSN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9)
-                    .addComponent(txtCoverage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPolicyName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBillingAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtClaimAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDisburse, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReject, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/insurance finance.gif"))); // NOI18N
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 720, 440);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDisburseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisburseActionPerformed
@@ -239,6 +211,9 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
     private javax.swing.JButton btnDisburse;
     private javax.swing.JButton btnReject;
     private javax.swing.JLabel jLabel1;
+
+    private javax.swing.JLabel jLabel2;
+
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;

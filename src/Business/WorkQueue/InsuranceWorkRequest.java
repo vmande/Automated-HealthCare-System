@@ -6,8 +6,12 @@
 package Business.WorkQueue;
 
 import Business.InsuranceCustomer.InsuranceCustomer;
+import Business.Patient.Patient;
 
-
+/**
+ *
+ * @author Sourav
+ */
 public class InsuranceWorkRequest extends WorkRequest {
 
     private String policyNumber;

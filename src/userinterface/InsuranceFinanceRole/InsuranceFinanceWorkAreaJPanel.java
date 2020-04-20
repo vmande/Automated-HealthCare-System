@@ -8,9 +8,13 @@ package userinterface.InsuranceFinanceRole;
 import Business.Enterprise.Enterprise;
 import Business.Organization.InsuranceFinanceOrganization;
 import Business.UserAccount.UserAccount;
+
+import Business.WorkQueue.GovernmentFundRequest;
 import Business.WorkQueue.InsuranceWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -50,13 +54,14 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
         btnAssign = new javax.swing.JButton();
         processRequestBtn2 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(30, 123, 123));
+
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Insurance Finance Work Area");
 
-        tblFinance.setBackground(new java.awt.Color(204, 255, 153));
+        tblFinance.setBackground(new java.awt.Color(0, 153, 255));
+
         tblFinance.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -78,7 +83,9 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblFinance);
 
-        btnAssign.setBackground(new java.awt.Color(255, 204, 51));
+
+        btnAssign.setBackground(new java.awt.Color(0, 153, 255));
+
         btnAssign.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAssign.setText("Assign To Me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +94,9 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        processRequestBtn2.setBackground(new java.awt.Color(255, 204, 51));
+
+        processRequestBtn2.setBackground(new java.awt.Color(0, 153, 255));
+
         processRequestBtn2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         processRequestBtn2.setText("Process Request");
         processRequestBtn2.addActionListener(new java.awt.event.ActionListener() {
@@ -103,17 +112,22 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addComponent(jLabel1))
+
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(202, 202, 202)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(264, 264, 264)
+                                .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(processRequestBtn2)))
+                        .addGap(0, 303, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(264, 264, 264)
-                        .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(processRequestBtn2)))
-                .addContainerGap(313, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1))
+                        .addContainerGap()
+                        .addComponent(jScrollPane1)))
+                .addContainerGap())
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,9 +138,11 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(processRequestBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(255, Short.MAX_VALUE))
+
+                    .addComponent(processRequestBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(268, Short.MAX_VALUE))
+
         );
     }// </editor-fold>//GEN-END:initComponents
 

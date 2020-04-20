@@ -14,7 +14,10 @@ import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.HealthcareAccountantRole.AccountantWorkAreaJPanel;
 
-
+/**
+ *
+ * @author ankit
+ */
 public class AccountantRole extends Role{
 
     @Override

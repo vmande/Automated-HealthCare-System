@@ -9,7 +9,10 @@ import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import java.util.List;
 
-
+/**
+ *
+ * @author MyPC1
+ */
 public abstract class Enterprise extends Organization {
 
     private EnterpriseType enterpriseType;
@@ -22,7 +25,8 @@ public abstract class Enterprise extends Organization {
     public enum EnterpriseType {
 
         HealthCenter("HealthCenter"),
-        InsuranceCompany("InsuranceCompany");
+        InsuranceCompany("InsuranceCompany"),
+        Government("Government");
 
         private String value;
 

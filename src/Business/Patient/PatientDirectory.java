@@ -9,7 +9,10 @@ package Business.Patient;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ *
+ * @author ankit
+ */
 public class PatientDirectory {
     
     private List<Patient> patients = new ArrayList<>();

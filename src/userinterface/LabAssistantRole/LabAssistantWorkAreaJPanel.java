@@ -8,6 +8,7 @@ import Business.EcoSystem;
 import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.PatientTreatmentWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
@@ -15,7 +16,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-
+/**
+ *
+ * @author raunak
+ */
 public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
@@ -67,12 +71,12 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         workRequestJTable = new javax.swing.JTable();
         assignJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(30, 123, 123));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
 
-        workRequestJTable.setBackground(new java.awt.Color(204, 255, 153));
+        workRequestJTable.setBackground(new java.awt.Color(0, 153, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -101,9 +105,10 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 58, 730, 96));
+        add(jScrollPane1);
+        jScrollPane1.setBounds(10, 20, 730, 90);
 
-        assignJButton.setBackground(new java.awt.Color(255, 204, 51));
+        assignJButton.setBackground(new java.awt.Color(0, 153, 255));
         assignJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         assignJButton.setText("Assign to me");
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -111,9 +116,10 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
                 assignJButtonActionPerformed(evt);
             }
         });
-        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, 50));
+        add(assignJButton);
+        assignJButton.setBounds(200, 130, 140, 40);
 
-        processJButton.setBackground(new java.awt.Color(255, 204, 51));
+        processJButton.setBackground(new java.awt.Color(0, 153, 255));
         processJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         processJButton.setText("Process");
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -121,12 +127,12 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 100, 50));
+        add(processJButton);
+        processJButton.setBounds(400, 130, 140, 40);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Lab Assistant Work Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lab.gif"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(0, 130, 740, 400);
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
@@ -199,7 +205,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton processJButton;
     private javax.swing.JTable workRequestJTable;

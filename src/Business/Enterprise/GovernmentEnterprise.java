@@ -10,11 +10,14 @@ import Business.Role.Role;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ *
+ * @author ankit
+ */
 public class GovernmentEnterprise extends Enterprise {
 
     public GovernmentEnterprise(String name) {
-        super(name, EnterpriseType.HealthCenter);
+        super(name, EnterpriseType.Government);
     }
 
     @Override

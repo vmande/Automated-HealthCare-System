@@ -5,9 +5,14 @@
  */
 package Business.WorkQueue;
 
+import static Business.Organization.Organization.Type.Patient;
 import Business.Patient.Patient;
+import static Business.Role.Role.RoleType.Patient;
 
-
+/**
+ *
+ * @author Lionel
+ */
 public class AccountantBillingRequest extends WorkRequest {
 
     private double billingAmount;

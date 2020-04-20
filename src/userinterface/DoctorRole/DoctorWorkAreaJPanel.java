@@ -4,17 +4,25 @@
  */
 package userinterface.DoctorRole;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.DoctorOrganization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.PatientTreatmentWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import userinterface.HealthcareAccountantRole.CreateAppointmentJPanel;
 
-
+/**
+ *
+ * @author raunak
+ */
 public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
@@ -84,9 +92,9 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         btnViewPatient = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(30, 123, 123));
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        workRequestJTable.setBackground(new java.awt.Color(204, 255, 153));
+        workRequestJTable.setBackground(new java.awt.Color(0, 153, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -114,7 +122,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        requestTestJButton.setBackground(new java.awt.Color(255, 204, 51));
+        requestTestJButton.setBackground(new java.awt.Color(0, 153, 255));
         requestTestJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         requestTestJButton.setText("Request Lab Test");
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -124,18 +132,15 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
-        enterpriseLabel.setText("EnterPrise :");
+        enterpriseLabel.setText("Enterprise :");
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        valueLabel.setForeground(new java.awt.Color(255, 255, 255));
         valueLabel.setText("<value>");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Medical Test Work Queue");
 
-        btnAssignToMe.setBackground(new java.awt.Color(255, 204, 51));
+        btnAssignToMe.setBackground(new java.awt.Color(0, 153, 255));
         btnAssignToMe.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAssignToMe.setText("Assign To Me");
         btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +149,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnProvidePrescription.setBackground(new java.awt.Color(255, 204, 51));
+        btnProvidePrescription.setBackground(new java.awt.Color(0, 153, 255));
         btnProvidePrescription.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnProvidePrescription.setText("Provide Prescription");
         btnProvidePrescription.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +158,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnComplete.setBackground(new java.awt.Color(255, 204, 51));
+        btnComplete.setBackground(new java.awt.Color(0, 153, 255));
         btnComplete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnComplete.setText("Complete Treatment");
         btnComplete.addActionListener(new java.awt.event.ActionListener() {
@@ -162,7 +167,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnViewPatient.setBackground(new java.awt.Color(255, 204, 51));
+        btnViewPatient.setBackground(new java.awt.Color(0, 153, 255));
         btnViewPatient.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnViewPatient.setText("View Patient");
         btnViewPatient.addActionListener(new java.awt.event.ActionListener() {
@@ -172,7 +177,6 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Doctor Work Area");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -205,7 +209,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                             .addComponent(enterpriseLabel)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(252, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,7 +231,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(requestTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnViewPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnComplete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(545, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

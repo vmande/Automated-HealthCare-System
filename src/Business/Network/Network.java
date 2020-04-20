@@ -7,6 +7,10 @@ package Business.Network;
 
 import Business.Enterprise.EnterpriseDirectory;
 
+/**
+ *
+ * @author MyPC1
+ */
 public class Network {
     private String name;
     private EnterpriseDirectory enterpriseDirectory;

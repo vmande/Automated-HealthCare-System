@@ -10,13 +10,20 @@ import Business.Organization.HealthCareOfficerOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.GovernmentFundRequest;
+import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import userinterface.DoctorRole.RequestLabTestJPanel;
+import userinterface.GovernmentTreasurerRole.TreasurerProcessWorkRequestJPanel;
+import userinterface.SystemAdminWorkArea.ManageNetworkJPanel;
 
-
+/**
+ *
+ * @author ankit
+ */
 public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel jPanel;
@@ -54,13 +61,12 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
         btnAssign = new javax.swing.JButton();
         processRequestBtn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(30, 123, 123));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Government Health Officer Work Area");
 
-        workRequestJTable.setBackground(new java.awt.Color(153, 255, 153));
+        workRequestJTable.setBackground(new java.awt.Color(0, 153, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -89,7 +95,7 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        btnAssign.setBackground(new java.awt.Color(255, 204, 51));
+        btnAssign.setBackground(new java.awt.Color(0, 153, 255));
         btnAssign.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAssign.setText("Assign To Me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +104,7 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        processRequestBtn.setBackground(new java.awt.Color(255, 204, 51));
+        processRequestBtn.setBackground(new java.awt.Color(0, 153, 255));
         processRequestBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         processRequestBtn.setText("Process Request");
         processRequestBtn.addActionListener(new java.awt.event.ActionListener() {

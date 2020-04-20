@@ -6,10 +6,14 @@
 package Business.Organization;
 
 import Business.Role.GovernmentHealthOfficerRole;
+import Business.Role.LabAssistantRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
-
+/**
+ *
+ * @author ankit
+ */
 public class HealthCareOfficerOrganization extends Organization {
 
     public HealthCareOfficerOrganization() {

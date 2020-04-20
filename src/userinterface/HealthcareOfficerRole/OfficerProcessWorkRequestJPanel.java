@@ -6,16 +6,23 @@
 package userinterface.HealthcareOfficerRole;
 
 import Business.Enterprise.Enterprise;
+import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.Organization.SecretaryOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.GovernmentFundRequest;
+import Business.WorkQueue.LabTestWorkRequest;
+import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import userinterface.DoctorRole.DoctorWorkAreaJPanel;
 
-
+/**
+ *
+ * @author Sourav
+ */
 public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
 
     /**
@@ -61,23 +68,20 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         btnReject = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(30, 123, 123));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         amountTxt.setEnabled(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Amount");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Message");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Officer Request Process area ");
 
-        sendRequestToSecretaryBtn.setBackground(new java.awt.Color(255, 204, 51));
+        sendRequestToSecretaryBtn.setBackground(new java.awt.Color(0, 153, 255));
         sendRequestToSecretaryBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         sendRequestToSecretaryBtn.setText("Send Request to Secretary to approve");
         sendRequestToSecretaryBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +90,7 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        backBtn.setBackground(new java.awt.Color(255, 204, 51));
+        backBtn.setBackground(new java.awt.Color(0, 153, 255));
         backBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         backBtn.setText("<<Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +100,6 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
         });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Location");
 
         locationTxt.setEnabled(false);
@@ -104,10 +107,9 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
         populationTxt.setEnabled(false);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Population");
 
-        btnReject.setBackground(new java.awt.Color(255, 204, 51));
+        btnReject.setBackground(new java.awt.Color(0, 153, 255));
         btnReject.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnReject.setText("Reject");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
@@ -128,9 +130,9 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnReject, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addGap(18, 18, 18)
                         .addComponent(backBtn)
-                        .addGap(40, 40, 40)
+                        .addGap(48, 48, 48)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
@@ -154,11 +156,14 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
                     .addComponent(locationTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
