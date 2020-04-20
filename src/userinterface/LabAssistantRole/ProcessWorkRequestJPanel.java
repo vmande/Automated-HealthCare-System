@@ -4,7 +4,7 @@
  */
 package userinterface.LabAssistantRole;
 
-import Business.WorkQueue.LabTestWorkRequest;
+
 import Business.WorkQueue.PatientTreatmentWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author raunak
+ * @author Pooja
  */
 public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 

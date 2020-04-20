@@ -8,7 +8,6 @@ import Business.EcoSystem;
 import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.PatientTreatmentWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
@@ -18,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author raunak
+ * @author Pooja
  */
 public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
