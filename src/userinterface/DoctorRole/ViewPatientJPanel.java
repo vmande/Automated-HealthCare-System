@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Lionel
+ * @author Pooja
  */
 public class ViewPatientJPanel extends javax.swing.JPanel {
 
@@ -261,13 +261,6 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-//        userProcessContainer.remove(this);
-//        Component[] componentArray = userProcessContainer.getComponents();
-//        Component component = componentArray[componentArray.length - 1];
-//        LabAssistantWorkAreaJPanel dwjp = (LabAssistantWorkAreaJPanel) component;
-//        dwjp.populateTable();
-//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//        layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
 

@@ -25,7 +25,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Lionel
+ * @author Pooja
  */
 public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
 
@@ -274,15 +274,7 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
         String insuranceCompany = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompany();
         double claimAmount = Double.parseDouble(txtInsuranceClaimAmount.getText());
         double billAmount = accountBillingRequest.getBillingAmount();
-
-//        txtPolicyNumber.setText(policyNumber);
-//        txtSSN.setText(ssn);
-//        txtFirstName.setText(accountBillingRequest.getPatient().getPatientFirstName());
-//        txtLastName.setText(accountBillingRequest.getPatient().getPatientLastName());
-//        txtBillAmount.setText(String.valueOf(accountBillingRequest.getBillingAmount()));
-//        txtInsurancePolicyName.setText(policyName);
-
-       
+      
             Insurance insurance = new Insurance(policyName, insuranceCompany, claimAmount);
             insurance.setCoverage(accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoverage());
 
