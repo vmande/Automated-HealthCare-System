@@ -9,10 +9,7 @@ import Business.Role.AccountantRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
-/**
- *
- * @author Lionel
- */
+
 public class AccountantOrganization extends Organization {
 
     public AccountantOrganization() {
