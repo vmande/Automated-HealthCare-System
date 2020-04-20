@@ -18,6 +18,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -341,6 +342,9 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
 
             model.addRow(row);
         }
+        
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        workRequestJTable.setRowSorter(sorter);
 
     }
 
@@ -371,5 +375,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
             
         }
         System.out.println("Insur"+ insuranceWorkRequests.size());
+         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        tblInsurance.setRowSorter(sorter);
     }
 }

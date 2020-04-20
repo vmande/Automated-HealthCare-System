@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.UUID;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -249,5 +250,8 @@ public class AccountantWorkAreaJPanel extends javax.swing.JPanel {
 
             dtm.addRow(row);
         }
+        
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(dtm);
+        tblAllPatients.setRowSorter(sorter);
     }
 }
