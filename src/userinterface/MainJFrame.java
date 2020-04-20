@@ -13,14 +13,12 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
  *
- * @author Lingfeng
+ * @author 
  */
 public class MainJFrame extends javax.swing.JFrame {
 
@@ -68,8 +66,9 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1.setFocusable(false);
         jPanel1.setRequestFocusEnabled(false);
 
-        loginJButton.setBackground(new java.awt.Color(255, 153, 0));
+        loginJButton.setBackground(new java.awt.Color(255, 0, 51));
         loginJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        loginJButton.setForeground(new java.awt.Color(255, 255, 255));
         loginJButton.setText("Login");
         loginJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
