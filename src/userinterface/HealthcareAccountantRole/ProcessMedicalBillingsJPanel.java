@@ -262,15 +262,13 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
 
             if (accountBillingRequest.getReceiver() != null) {
                 if (accountBillingRequest.getReceiver().equals(userAccount)) {
-                    if(accountBillingRequest.getStatus().equalsIgnoreCase("Pending on Accountant"))
-                    {
-                    AccountantProcessRequestJPanel panel = new AccountantProcessRequestJPanel(userProcessContainer, userAccount, accountBillingRequest, enterprise, ecoSystem);
-                    userProcessContainer.add("AccountantProcessRequestJPanel", panel);
-                    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-                    layout.next(userProcessContainer);
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(null, "Cannot process Request as request is in  " + accountBillingRequest.getStatus());
+                    if (accountBillingRequest.getStatus().equalsIgnoreCase("Pending on " + accountBillingRequest.getReceiver().getEmployee().getName())) {
+                        AccountantProcessRequestJPanel panel = new AccountantProcessRequestJPanel(userProcessContainer, userAccount, accountBillingRequest, enterprise, ecoSystem);
+                        userProcessContainer.add("AccountantProcessRequestJPanel", panel);
+                        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                        layout.next(userProcessContainer);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Cannot process Request as request is in 12345  " + accountBillingRequest.getStatus());
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Not authorised!");
@@ -357,29 +355,26 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
     public void populateInsuranceClaimTable() {
         List<InsuranceWorkRequest> insuranceWorkRequests = new ArrayList<>();
         ArrayList<WorkRequest> workRequests = userAccount.getWorkQueue().getWorkRequests();
-        for(WorkRequest workRequest : workRequests)
-        {
-            if(workRequest instanceof InsuranceWorkRequest)
-            {
+        for (WorkRequest workRequest : workRequests) {
+            if (workRequest instanceof InsuranceWorkRequest) {
                 insuranceWorkRequests.add((InsuranceWorkRequest) workRequest);
             }
         }
-        
+
         DefaultTableModel model = (DefaultTableModel) tblInsurance.getModel();
-        
+
         model.setRowCount(0);
-        for(InsuranceWorkRequest insuranceWorkRequest: insuranceWorkRequests)
-        {
+        for (InsuranceWorkRequest insuranceWorkRequest : insuranceWorkRequests) {
             Object[] row = new Object[6];
-         row[0]=insuranceWorkRequest;
-         row[1] = userAccount.getEmployee().getName();
-         row[2] = insuranceWorkRequest.getReceiver()==null?"":insuranceWorkRequest.getReceiver().getEmployee().getName();
-         row[3] = insuranceWorkRequest.getBillAmount();
-         row[4] = insuranceWorkRequest.getClaimAmount();
-         row[5] = insuranceWorkRequest.getStatus();
-         model.addRow(row);
-            
+            row[0] = insuranceWorkRequest;
+            row[1] = userAccount.getEmployee().getName();
+            row[2] = insuranceWorkRequest.getReceiver() == null ? "" : insuranceWorkRequest.getReceiver().getEmployee().getName();
+            row[3] = insuranceWorkRequest.getBillAmount();
+            row[4] = insuranceWorkRequest.getClaimAmount();
+            row[5] = insuranceWorkRequest.getStatus();
+            model.addRow(row);
+
         }
-        System.out.println("Insur"+ insuranceWorkRequests.size());
+        System.out.println("Insur" + insuranceWorkRequests.size());
     }
 }
