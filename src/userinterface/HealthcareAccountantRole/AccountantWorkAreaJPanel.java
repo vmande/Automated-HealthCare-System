@@ -207,7 +207,7 @@ public class AccountantWorkAreaJPanel extends javax.swing.JPanel {
         DefaultPieDataset defaultPieDataset = new DefaultPieDataset();
         List<Patient> patients = ((HealthCenterEnterprise) enterprise).getPatientDirectory().getPatients();
         for (Patient patient : patients) {
-            if (patient.isIsTreatmentComplete()) {
+            if (patient.isIsTreatmentFinished()) {
                 treatedPatients.add(patient);
             } else {
                 underTreatmentPatients.add(patient);
@@ -242,9 +242,9 @@ public class AccountantWorkAreaJPanel extends javax.swing.JPanel {
 
             row[0] = patient;
             row[1] = patient.getPatientFirstName() + " " + patient.getPatientLastName();
-            row[2] = patient.getPhoneNumber();
+            row[2] = patient.getContactNumber();
             row[3] = patient.getAddress();
-            row[4] = patient.isIsTreatmentComplete() ? "Treatment Complete" : "Treatment In Progress";
+            row[4] = patient.isIsTreatmentFinished() ? "Treatment Complete" : "Treatment In Progress";
             row[5] = patient.getAppointmentDate();
 
             dtm.addRow(row);

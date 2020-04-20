@@ -270,7 +270,7 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
 
     private void btnSendRequestForInsuranceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendRequestForInsuranceActionPerformed
         String policyNumber = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurancePolicyNumber();
-        String ssn = accountBillingRequest.getPatient().getSsn();
+        String ssn = accountBillingRequest.getPatient().getSocialSecurityNumber();
         String policyName = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getPolicyName();
         String insuranceCompany = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompany();
         double claimAmount = Double.parseDouble(txtInsuranceClaimAmount.getText());
@@ -321,7 +321,7 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
                 org.getWorkQueue().getWorkRequests().add(insuranceWorkRequest);
                 userAccount.getWorkQueue().getWorkRequests().add(insuranceWorkRequest);
                 accountBillingRequest.setStatus("Patient Transaction Completed");
-                accountBillingRequest.getPatient().setIsTreatmentComplete(true);
+                accountBillingRequest.getPatient().setIsTreatmentFinished(true);
                 JOptionPane.showMessageDialog(null, "Money received from patient: " + String.format("%.2f", String.valueOf(payableAmount))+". Insurance Claim Request Raised Successfully for amount:" + claimAmount);
            btnSendRequestForInsurance.setEnabled(false);
             }
@@ -377,7 +377,7 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
         DecimalFormat df2 = new DecimalFormat("#.##");
         double coverage = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoverage();
         double billAmount = accountBillingRequest.getBillingAmount();
-        String ssn = accountBillingRequest.getPatient().getSsn();
+        String ssn = accountBillingRequest.getPatient().getSocialSecurityNumber();
         String policyName = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getPolicyName();
         String insuranceCompany = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompany();
         double claimAmount = (coverage * billAmount) / 100;
