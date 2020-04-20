@@ -13,7 +13,6 @@ import Business.Insurance.Insurance;
 import Business.InsuranceCustomer.InsuranceCustomer;
 import Business.Network.Network;
 import Business.Organization.DoctorOrganization;
-import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
@@ -21,12 +20,9 @@ import Business.WorkQueue.PatientTreatmentWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -34,11 +30,11 @@ import java.util.regex.Pattern;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import userinterface.DoctorRole.DoctorWorkAreaJPanel;
+
 
 /**
  *
- * @author ankit
+ * @author Pooja
  */
 public class CreateAppointmentJPanel extends javax.swing.JPanel {
 

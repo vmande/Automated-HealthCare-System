@@ -22,11 +22,11 @@ import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
-import userinterface.DoctorRole.RequestLabTestJPanel;
+
 
 /**
  *
- * @author ankit
+ * @author Pooja
  */
 public class AccountantWorkAreaJPanel extends javax.swing.JPanel {
 
