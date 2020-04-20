@@ -10,6 +10,10 @@ import Business.Role.Role;
 import java.util.ArrayList;
 
 
+/**
+ *
+ * @author Pooja
+ */
 public class AccountantOrganization extends Organization {
 
     public AccountantOrganization() {
