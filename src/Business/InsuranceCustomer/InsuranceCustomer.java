@@ -7,10 +7,7 @@ package Business.InsuranceCustomer;
 
 import Business.Insurance.Insurance;
 
-/**
- *
- * @author Sourav
- */
+
 public class InsuranceCustomer {
 
     // private int customerPolicyNumber;

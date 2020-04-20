@@ -5,14 +5,12 @@
  */
 package Business.InsuranceCustomer;
 
-import Business.Patient.Patient;
+
 import java.util.ArrayList;
 import java.util.List;
+import Business.Patient.Patient;
 
-/**
- *
- * @author Sourav
- */
+
 public class InsuranceCustomerDirectory {
 
     private List<InsuranceCustomer> insuranceCustomers = new ArrayList<>();

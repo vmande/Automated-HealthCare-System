@@ -5,10 +5,6 @@
  */
 package Business.Insurance;
 
-/**
- *
- * @author ankit
- */
 public class Insurance {
 
     private String policyName;

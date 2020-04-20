@@ -6,6 +6,7 @@
 package userinterface.InsuranceAgentRole;
 
 import Business.Enterprise.Enterprise;
+
 import Business.Organization.AccountantOrganization;
 import Business.Organization.InsuranceAgentOrganization;
 import Business.UserAccount.UserAccount;
@@ -15,14 +16,12 @@ import Business.WorkQueue.InsuranceWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
+
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Sourav
- */
+
 public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
 
     /**
@@ -64,6 +63,7 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
         jLabel1.setText("Process Requests");
 
         tblInsuranceWorkTable.setBackground(new java.awt.Color(0, 153, 255));
+
         tblInsuranceWorkTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -98,7 +98,9 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblInsuranceWorkTable);
 
+
         btnProcessRequest.setBackground(new java.awt.Color(0, 153, 255));
+
         btnProcessRequest.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnProcessRequest.setText("Process Request");
         btnProcessRequest.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +109,9 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
             }
         });
 
+
         btnBack.setBackground(new java.awt.Color(0, 153, 255));
+
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +120,9 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
             }
         });
 
+
         btnAssign.setBackground(new java.awt.Color(0, 153, 255));
+
         btnAssign.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAssign.setText("Assign To Me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -132,6 +138,7 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+
                         .addGap(23, 23, 23)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -148,10 +155,12 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
                                 .addComponent(jLabel1)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(23, 23, 23))
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
@@ -166,6 +175,7 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
                     .addComponent(btnProcessRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(190, Short.MAX_VALUE))
+
         );
     }// </editor-fold>//GEN-END:initComponents
 

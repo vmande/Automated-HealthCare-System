@@ -15,10 +15,7 @@ import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author ankit
- */
+
 public class ProcessRequestJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
@@ -46,6 +43,7 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
 
         jLabel2 = new javax.swing.JLabel();
         txtPolicyNumber = new javax.swing.JTextField();
@@ -90,15 +88,18 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(239, 250, 52, 15);
 
+
         txtMessage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMessageActionPerformed(evt);
             }
         });
+
         add(txtMessage);
         txtMessage.setBounds(309, 248, 265, 20);
 
         btnAccept.setBackground(new java.awt.Color(0, 153, 255));
+
         btnAccept.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAccept.setText("Accept and Send Request To Finance Department");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
@@ -106,10 +107,12 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
                 btnAcceptActionPerformed(evt);
             }
         });
+
         add(btnAccept);
         btnAccept.setBounds(121, 286, 311, 34);
 
         btnReject.setBackground(new java.awt.Color(0, 153, 255));
+
         btnReject.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnReject.setText("Reject Request");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +120,7 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
                 btnRejectActionPerformed(evt);
             }
         });
+
         add(btnReject);
         btnReject.setBounds(455, 286, 119, 34);
 
@@ -141,6 +145,7 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
         txtBillAmount.setBounds(308, 172, 144, 20);
 
         btnBack.setBackground(new java.awt.Color(0, 153, 255));
+
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -148,12 +153,14 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+
         add(btnBack);
         btnBack.setBounds(10, 11, 81, 25);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/insurance claim.gif"))); // NOI18N
         add(jLabel7);
         jLabel7.setBounds(-30, -50, 800, 600);
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMessageActionPerformed
@@ -238,12 +245,17 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnAccept;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnReject;
+
+    private javax.swing.JLabel jLabel1;
+
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+
     private javax.swing.JLabel jLabel7;
+
     private javax.swing.JTextField txtBillAmount;
     private javax.swing.JTextField txtClaimAmount;
     private javax.swing.JTextField txtCustomerName;
