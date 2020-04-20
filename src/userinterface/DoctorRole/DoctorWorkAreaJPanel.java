@@ -14,11 +14,12 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 
 /**
  *
- * @author raunak
+ * @author Pooja
  */
 public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -60,12 +61,11 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             row[7] = request.getStatus();
 
             model.addRow(row);
-//            if(patientToLab.get((PatientTreatmentWorkRequest)request) == null)
-//            {
-//                patientToLab.put((PatientTreatmentWorkRequest)request, null);
-//            }
 
         }
+        
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        workRequestJTable.setRowSorter(sorter);
     }
 
     /**
