@@ -9,6 +9,10 @@ import Business.Role.Role;
 import java.util.ArrayList;
 
 
+/**
+ *
+ * @author Pooja
+ */
 public class LabOrganization extends Organization{
 
     public LabOrganization() {
