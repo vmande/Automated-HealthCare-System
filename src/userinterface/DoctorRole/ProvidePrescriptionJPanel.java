@@ -225,7 +225,7 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
         txtFirstName.setText(request.getPatient().getPatientFirstName());
         txtLastName.setText(request.getPatient().getPatientLastName());
        // txtBirthDate1.setText(String.valueOf(request.getPatient().getDateOfBirth()));
-        txtAge.setText(String.valueOf(request.getPatient().getAge()));
+        txtAge.setText(String.valueOf(request.getPatient().getPatientAge()));
         txtMedicalCondition.setText(request.getReasonForVisit());
         txtAssignedDoctor.setText(request.getAssignedDoctor().getEmployee().getName());
 

@@ -31,7 +31,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-
 /**
  *
  * @author Pooja
@@ -304,7 +303,7 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtSSN, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(48, 48, 48)
+                                .addGap(25, 25, 25)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel25)
@@ -663,11 +662,11 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
             patient.setPatientId(patientId);
             patient.setPatientFirstName(firstName);
             patient.setPatientLastName(lastName);
-            patient.setSex(gender);
+            patient.setGender(gender);
 
-            patient.setPhoneNumber(phoneNo);
-            patient.setAge(age);
-            patient.setSsn(ssn);
+            patient.setContactNumber(phoneNo);
+            patient.setPatientAge(age);
+            patient.setSocialSecurityNumber(ssn);
             patient.setAddress(address);
 
             patient.setInsuranceCustomer(insuranceCustomer);
@@ -723,7 +722,7 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         for (HealthCenterEnterprise healthCenterEnterprise : healthCenterEnterprises) {
             List<Patient> patients = healthCenterEnterprise.getPatientDirectory().getPatients();
             for (Patient patient : patients) {
-                if (patient.getSsn().equals(ssn)) {
+                if (patient.getSocialSecurityNumber().equals(ssn)) {
                     autopopulateFields(patient);
                     isPatientFound = true;
                 }
@@ -916,12 +915,12 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         txtFirstName.setText(patient.getPatientFirstName());
         txtLastName.setText(patient.getPatientLastName());
         txtPatientIdentifier.setText(patient.getPatientId());
-        txtHomePhone.setText(patient.getPhoneNumber());
-        txtSSN.setText(patient.getSsn());
-        txtAge.setText(patient.getAge());
+        txtHomePhone.setText(patient.getContactNumber());
+        txtSSN.setText(patient.getSocialSecurityNumber());
+        txtAge.setText(patient.getPatientAge());
         txtAddress.setText(patient.getAddress());
         
-        String sex = patient.getSex();
+        String sex = patient.getGender();
         
         if(sex.equals("Male"))
         {

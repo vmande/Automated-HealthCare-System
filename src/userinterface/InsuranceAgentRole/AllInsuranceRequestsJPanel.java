@@ -7,20 +7,14 @@ package userinterface.InsuranceAgentRole;
 
 import Business.Enterprise.Enterprise;
 
-import Business.Organization.AccountantOrganization;
 import Business.Organization.InsuranceAgentOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.AccountantBillingRequest;
-import Business.WorkQueue.GovernmentFundRequest;
 import Business.WorkQueue.InsuranceWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
-import java.awt.Component;
-
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-
 
 public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
 
@@ -188,8 +182,8 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
             return;
         } else {
             insuranceWorkRequest = (InsuranceWorkRequest) tblInsuranceWorkTable.getValueAt(selectedRow, 0);
-           
-             if (insuranceWorkRequest.getStatus().equals("Rejected")) {
+
+            if (insuranceWorkRequest.getStatus().equals("Rejected")) {
                 JOptionPane.showMessageDialog(null, "Cannot process a Rejected Request", "Warning!", JOptionPane.WARNING_MESSAGE);
                 return;
             }
@@ -209,17 +203,16 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Insurance Claim is already Approved");
                 return;
             }
-            
-            if(!userAccount.equals(insuranceWorkRequest.getReceiver())){
-             JOptionPane.showMessageDialog(null, "Not Authorized", "Warning!", JOptionPane.WARNING_MESSAGE);
+
+            if (!userAccount.equals(insuranceWorkRequest.getReceiver())) {
+                JOptionPane.showMessageDialog(null, "Not Authorized", "Warning!", JOptionPane.WARNING_MESSAGE);
                 return;
+            } else {
+
+                CardLayout cardLayout = (CardLayout) userProcessContainer.getLayout();
+                userProcessContainer.add("ProcessRequestJPanel", new ProcessRequestJPanel(userProcessContainer, userAccount, enterprise, insuranceWorkRequest));
+                cardLayout.next(userProcessContainer);
             }
-           else {
-            
-            CardLayout cardLayout = (CardLayout) userProcessContainer.getLayout();
-            userProcessContainer.add("ProcessRequestJPanel", new ProcessRequestJPanel(userProcessContainer, userAccount, enterprise, insuranceWorkRequest));
-            cardLayout.next(userProcessContainer);
-        }
         }
 
     }//GEN-LAST:event_btnProcessRequestActionPerformed
@@ -231,15 +224,13 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
             return;
         } else {
             InsuranceWorkRequest insuranceWorkRequest = (InsuranceWorkRequest) tblInsuranceWorkTable.getValueAt(selectedRow, 0);
-           if(insuranceWorkRequest.getStatus().equals("Sent"))
-           {
-            insuranceWorkRequest.setReceiver(userAccount);
-            insuranceWorkRequest.setStatus("Pending on Agent: " + userAccount.getEmployee().getName());
-            populateTable();
-            JOptionPane.showMessageDialog(null, "Success !! Request is assigned to you ");
-        }
-           else {
-                JOptionPane.showMessageDialog(null, "Can't assign this request, as it is in " + insuranceWorkRequest.getStatus() + " status" , "Warning!", JOptionPane.WARNING_MESSAGE);
+            if (insuranceWorkRequest.getStatus().equals("Sent")) {
+                insuranceWorkRequest.setReceiver(userAccount);
+                insuranceWorkRequest.setStatus("Pending on Agent: " + userAccount.getEmployee().getName());
+                populateTable();
+                JOptionPane.showMessageDialog(null, "Success !! Request is assigned to you ");
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't assign this request, as it is in " + insuranceWorkRequest.getStatus() + " status", "Warning!", JOptionPane.WARNING_MESSAGE);
             }
         }
     }//GEN-LAST:event_btnAssignActionPerformed

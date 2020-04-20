@@ -271,17 +271,6 @@ public class MainJFrame extends javax.swing.JFrame {
         passwordField.setEnabled(false);
     }//GEN-LAST:event_loginJButtonActionPerformed
 
-//    public void demo()
-//    {
-//       //setSize(1200,700);
-//       //setLayout();
-//       // ImageIcon img = new ImageIcon("D:\\NEU Assignment\\AED\\Final Project\\HealthCareNextDoor\\src\\Images\\wallpaper2.jpg");
-//       imageLbl = new JLabel("", JLabel.CENTER);
-//       imageLbl.setBounds(0,0,1200,700);
-//       add(imageLbl);
-//       setVisible(true);
-//    
-//    }
     
     /**
      * @param args the command line arguments

@@ -17,12 +17,12 @@ public class Patient {
     private String patientId;
     private String patientLastName;
     private String patientFirstName;
-    private String ssn;
-    private String age;
-    private String phoneNumber;
+    private String socialSecurityNumber;
+    private String patientAge;
+    private String contactNumber;
     private String address;
-    private String sex;
-    private boolean isTreatmentComplete;
+    private String gender;
+    private boolean isTreatmentFinished;
     private String appointmentDate;
 
     private InsuranceCustomer insuranceCustomer;
@@ -35,42 +35,26 @@ public class Patient {
         return patientLastName;
     }
 
-    public void setPatientLastName(String patientLastName) {
-        this.patientLastName = patientLastName;
+   
+    
+    public void setSocialSecurityNumber(String socialSecurityNumber) {
+        this.socialSecurityNumber = socialSecurityNumber;
     }
 
-    public String getPatientFirstName() {
-
-        return patientFirstName;
-
+    public String getPatientAge() {
+        return patientAge;
     }
 
-    public void setPatientFirstName(String patientFirstName) {
-        this.patientFirstName = patientFirstName;
+    public void setPatientAge(String patientAge) {
+        this.patientAge = patientAge;
     }
 
-    public String getSsn() {
-        return ssn;
+    public String getContactNumber() {
+        return contactNumber;
     }
 
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
     }
 
     public String getAddress() {
@@ -93,13 +77,23 @@ public class Patient {
         return patientId;
     }
 
-    public String getSex() {
-        return sex;
+    public String getGender() {
+        return gender;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
+    
+    public void setPatientFirstName(String patientFirstName) {
+        this.patientFirstName = patientFirstName;
+    }
+
+    public String getSocialSecurityNumber() {
+        return socialSecurityNumber;
+    }
+
+    
 
     @Override
     public String toString() {
@@ -110,12 +104,12 @@ public class Patient {
         this.patientId = patientId;
     }
 
-    public boolean isIsTreatmentComplete() {
-        return isTreatmentComplete;
+    public boolean isIsTreatmentFinished() {
+        return isTreatmentFinished;
     }
 
-    public void setIsTreatmentComplete(boolean isTreatmentComplete) {
-        this.isTreatmentComplete = isTreatmentComplete;
+    public void setIsTreatmentFinished(boolean isTreatmentFinished) {
+        this.isTreatmentFinished = isTreatmentFinished;
     }
 
     public String getAppointmentDate() {
@@ -125,6 +119,17 @@ public class Patient {
     public void setAppointmentDate(String appointmentDate) {
         this.appointmentDate = appointmentDate;
     }
+    
+     public void setPatientLastName(String patientLastName) {
+        this.patientLastName = patientLastName;
+    }
+
+    public String getPatientFirstName() {
+
+        return patientFirstName;
+
+    }
+
 
     
 }

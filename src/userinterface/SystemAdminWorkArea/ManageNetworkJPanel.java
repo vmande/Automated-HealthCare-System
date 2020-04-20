@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -31,19 +32,19 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = ecosystem;
-
         populateNetworkTable();
     }
 
     private void populateNetworkTable() {
         DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
-
         model.setRowCount(0);
         for (Network network : ecosystem.getNetworks()) {
             Object[] row = new Object[1];
             row[0] = network;
             model.addRow(row);
         }
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        networkJTable.setRowSorter(sorter);
     }
 
     /**
@@ -207,10 +208,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 populateNetworkTable();
             }
         }
-
-        
-
-
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -229,18 +226,17 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row first from the table to delete Network", "Warning!", JOptionPane.WARNING_MESSAGE);
             return;
-        } 
-        else{
-        Network network = (Network) networkJTable.getValueAt(selectedRow, 0);
-        int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to proceed?");
+        } else {
+            Network network = (Network) networkJTable.getValueAt(selectedRow, 0);
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to proceed?");
             if (dialogResult == JOptionPane.YES_OPTION) {
-        ecosystem.getNetworks().remove(network);
-        populateNetworkTable();
-        
-        JOptionPane.showMessageDialog(null, "Network is deleted");
+                ecosystem.getNetworks().remove(network);
+                populateNetworkTable();
+
+                JOptionPane.showMessageDialog(null, "Network is deleted");
+            }
+
         }
-            
-        }        
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -294,8 +294,8 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         txtLastName.setText(request.getPatient().getPatientLastName());
         txtPatientId.setText(String.valueOf(request.getPatient().getPatientId()));
         txtAddress.setText(request.getPatient().getAddress());
-        txtHomePhone.setText(request.getPatient().getPhoneNumber());
-        txtAge.setText(String.valueOf(request.getPatient().getAge()));
+        txtHomePhone.setText(request.getPatient().getContactNumber());
+        txtAge.setText(String.valueOf(request.getPatient().getPatientAge()));
         txtMedicalCondition.setText(request.getReasonForVisit());
         txtPrescription.setText(request.getPrescription());
     }

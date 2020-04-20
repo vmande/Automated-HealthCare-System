@@ -9,14 +9,12 @@ import Business.Employee.Employee;
 import Business.Enterprise.*;
 import Business.Network.Network;
 import Business.Role.EnterpriseAdminRole;
-import Business.Role.GovernmentHealthOfficerRole;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import Business.UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,7 +22,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -76,6 +74,8 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 }
             }
         }
+         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        enterpriseJTable.setRowSorter(sorter);
     }
 
     private void populateNetworkComboBox() {
