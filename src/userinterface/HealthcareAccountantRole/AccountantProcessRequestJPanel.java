@@ -19,6 +19,7 @@ import Business.WorkQueue.AccountantBillingRequest;
 import Business.WorkQueue.InsuranceWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.text.DecimalFormat;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -275,13 +276,6 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
         double claimAmount = Double.parseDouble(txtInsuranceClaimAmount.getText());
         double billAmount = accountBillingRequest.getBillingAmount();
 
-//        txtPolicyNumber.setText(policyNumber);
-//        txtSSN.setText(ssn);
-//        txtFirstName.setText(accountBillingRequest.getPatient().getPatientFirstName());
-//        txtLastName.setText(accountBillingRequest.getPatient().getPatientLastName());
-//        txtBillAmount.setText(String.valueOf(accountBillingRequest.getBillingAmount()));
-//        txtInsurancePolicyName.setText(policyName);
-
        
             Insurance insurance = new Insurance(policyName, insuranceCompany, claimAmount);
             insurance.setCoverage(accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoverage());
@@ -328,7 +322,7 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
                 userAccount.getWorkQueue().getWorkRequests().add(insuranceWorkRequest);
                 accountBillingRequest.setStatus("Patient Transaction Completed");
                 accountBillingRequest.getPatient().setIsTreatmentComplete(true);
-                JOptionPane.showMessageDialog(null, "Money received from patient: " + payableAmount+". Insurance Claim Request Raised Successfully for amount:" + claimAmount);
+                JOptionPane.showMessageDialog(null, "Money received from patient: " + String.format("%.2f", String.valueOf(payableAmount))+". Insurance Claim Request Raised Successfully for amount:" + claimAmount);
            btnSendRequestForInsurance.setEnabled(false);
             }
             
@@ -380,6 +374,7 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
 
     private void populate() {
         String policyNumber = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurancePolicyNumber();
+        DecimalFormat df2 = new DecimalFormat("#.##");
         double coverage = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoverage();
         double billAmount = accountBillingRequest.getBillingAmount();
         String ssn = accountBillingRequest.getPatient().getSsn();
@@ -395,7 +390,7 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
         txtBillAmount.setText(String.valueOf(billAmount));
         txtInsurancePolicyName.setText(policyName);
         txtInsuranceClaimAmount.setText(String.valueOf(claimAmount));
-        txtPayableAmount.setText(String.valueOf(payableAmount));
+        txtPayableAmount.setText(String.valueOf(df2.format(payableAmount)));
         
         if(claimAmount>0)
         {

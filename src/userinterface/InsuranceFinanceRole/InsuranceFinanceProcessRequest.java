@@ -66,14 +66,12 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         txtSSN = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtCoverage = new javax.swing.JTextField();
-
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
         btnDisburse.setBackground(new java.awt.Color(0, 153, 255));
-
         btnDisburse.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnDisburse.setText("Disburse Amount");
         btnDisburse.addActionListener(new java.awt.event.ActionListener() {
@@ -81,12 +79,10 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
                 btnDisburseActionPerformed(evt);
             }
         });
-
         add(btnDisburse);
         btnDisburse.setBounds(130, 316, 129, 32);
 
         btnReject.setBackground(new java.awt.Color(0, 153, 255));
-
         btnReject.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnReject.setText("Reject Claim");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +90,6 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
                 btnRejectActionPerformed(evt);
             }
         });
-
         add(btnReject);
         btnReject.setBounds(291, 316, 103, 32);
 
@@ -110,7 +105,6 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         jLabel4.setBounds(154, 91, 86, 15);
 
         backBtn.setBackground(new java.awt.Color(0, 153, 255));
-
         backBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         backBtn.setText("<<Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -118,11 +112,14 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
                 backBtnActionPerformed(evt);
             }
         });
-
         add(backBtn);
         backBtn.setBounds(10, 23, 77, 29);
+
+        txtPolicyNumber.setEditable(false);
         add(txtPolicyNumber);
         txtPolicyNumber.setBounds(278, 86, 116, 23);
+
+        txtPolicyName.setEditable(false);
         add(txtPolicyName);
         txtPolicyName.setBounds(278, 209, 116, 23);
 
@@ -131,6 +128,8 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         jLabel1.setText("policyName");
         add(jLabel1);
         jLabel1.setBounds(172, 211, 68, 15);
+
+        txtBillingAmount.setEditable(false);
         add(txtBillingAmount);
         txtBillingAmount.setBounds(278, 247, 116, 23);
 
@@ -139,6 +138,13 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         jLabel6.setText("Billing Amount");
         add(jLabel6);
         jLabel6.setBounds(150, 249, 90, 15);
+
+        txtClaimAmount.setEditable(false);
+        txtClaimAmount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtClaimAmountActionPerformed(evt);
+            }
+        });
         add(txtClaimAmount);
         txtClaimAmount.setBounds(278, 285, 116, 23);
 
@@ -153,6 +159,8 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         jLabel8.setText("SSN");
         add(jLabel8);
         jLabel8.setBounds(216, 129, 24, 15);
+
+        txtSSN.setEditable(false);
         add(txtSSN);
         txtSSN.setBounds(278, 124, 116, 23);
 
@@ -161,6 +169,8 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         jLabel9.setText("Conerage%");
         add(jLabel9);
         jLabel9.setBounds(168, 176, 72, 15);
+
+        txtCoverage.setEditable(false);
         add(txtCoverage);
         txtCoverage.setBounds(278, 171, 116, 23);
 
@@ -205,15 +215,17 @@ public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backBtnActionPerformed
 
+    private void txtClaimAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClaimAmountActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtClaimAmountActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
     private javax.swing.JButton btnDisburse;
     private javax.swing.JButton btnReject;
     private javax.swing.JLabel jLabel1;
-
     private javax.swing.JLabel jLabel2;
-
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
