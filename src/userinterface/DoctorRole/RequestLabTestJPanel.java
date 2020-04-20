@@ -4,24 +4,19 @@
  */
 package userinterface.DoctorRole;
 
-import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.PatientTreatmentWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
  *
- * @author raunak
+ * @author Pooja
  */
 public class RequestLabTestJPanel extends javax.swing.JPanel {
 

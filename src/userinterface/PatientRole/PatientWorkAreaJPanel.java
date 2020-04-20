@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Lionel
+ * @author Pooja
  */
 public class PatientWorkAreaJPanel extends javax.swing.JPanel {
 

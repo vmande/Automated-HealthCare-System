@@ -6,7 +6,7 @@ package Business.WorkQueue;
 
 /**
  *
- * @author raunak
+ * @author Pooja
  */
 public class LabTestWorkRequest extends WorkRequest{
     

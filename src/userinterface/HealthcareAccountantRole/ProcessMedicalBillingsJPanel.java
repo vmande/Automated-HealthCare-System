@@ -10,21 +10,19 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.AccountantOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.AccountantBillingRequest;
-import Business.WorkQueue.GovernmentFundRequest;
 import Business.WorkQueue.InsuranceWorkRequest;
 import Business.WorkQueue.WorkRequest;
-import com.sun.javafx.scene.control.skin.VirtualFlow;
 import java.awt.CardLayout;
-import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author Lionel
+ * @author Pooja
  */
 public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
 
@@ -293,9 +291,6 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
                 request.setReceiver(userAccount);
                 request.setStatus("Pending on " + request.getReceiver().getEmployee().getName());
                 populateTable();
-//             else {
-//                JOptionPane.showMessageDialog(null, "Can't assign this work request, as the work request is in " + request.getStatus() + " status");
-//            }
             } else {
                 JOptionPane.showMessageDialog(null, "The request is already assigned ");
             }
@@ -305,10 +300,6 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
         userProcessContainer.remove(this);
-//        Component[] componentArray = userProcessContainer.getComponents();
-//        Component component = componentArray[componentArray.length - 1];
-//        DoctorWorkAreaJPanel dwjp = (DoctorWorkAreaJPanel) component;
-//        dwjp.populateRequestTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
@@ -349,6 +340,9 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
 
             model.addRow(row);
         }
+        
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        workRequestJTable.setRowSorter(sorter);
 
     }
 
@@ -375,6 +369,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
             model.addRow(row);
 
         }
-        System.out.println("Insur" + insuranceWorkRequests.size());
+         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        tblInsurance.setRowSorter(sorter);
     }
 }

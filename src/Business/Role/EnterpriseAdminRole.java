@@ -11,10 +11,7 @@ import Business.UserAccount.UserAccount;
 import userinterface.AdministrativeRole.EnterpriseAdminWorkAreaJPanel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author raunak
- */
+
 public class EnterpriseAdminRole extends Role{
 
     @Override

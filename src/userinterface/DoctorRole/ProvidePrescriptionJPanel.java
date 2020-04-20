@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Lionel
+ * @author Pooja
  */
 public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
 
@@ -141,6 +141,7 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
         txtAssignedDoctor.setBounds(244, 222, 131, 23);
 
         btnSubmit.setBackground(new java.awt.Color(0, 153, 255));
+        btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,9 +149,10 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSubmit);
-        btnSubmit.setBounds(250, 364, 70, 23);
+        btnSubmit.setBounds(250, 364, 80, 23);
 
         backJButton.setBackground(new java.awt.Color(0, 153, 255));
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +160,7 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
             }
         });
         add(backJButton);
-        backJButton.setBounds(29, 11, 73, 23);
+        backJButton.setBounds(29, 11, 90, 23);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/doctor2.gif"))); // NOI18N

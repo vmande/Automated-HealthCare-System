@@ -8,17 +8,17 @@ import Business.EcoSystem;
 import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.PatientTreatmentWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author raunak
+ * @author Pooja
  */
 public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -56,6 +56,8 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
             row[5] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientId();
             model.addRow(row);
         }
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        workRequestJTable.setRowSorter(sorter);
     }
 
     /**

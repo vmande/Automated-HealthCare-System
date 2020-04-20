@@ -7,24 +7,19 @@ package userinterface.DoctorRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Network.Network;
 import Business.Organization.AccountantOrganization;
-import Business.Organization.HealthCareOfficerOrganization;
 import Business.Organization.Organization;
-import Business.Organization.SecretaryOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.AccountantBillingRequest;
-import Business.WorkQueue.GovernmentFundRequest;
 import Business.WorkQueue.PatientTreatmentWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
-import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
  *
- * @author Lionel
+ * @author Pooja 
  */
 public class RequestBillingJPanel extends javax.swing.JPanel {
 

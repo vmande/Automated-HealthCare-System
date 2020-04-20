@@ -26,7 +26,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Lionel
+ * @author Pooja
  */
 public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
 
@@ -275,8 +275,6 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
         String insuranceCompany = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompany();
         double claimAmount = Double.parseDouble(txtInsuranceClaimAmount.getText());
         double billAmount = accountBillingRequest.getBillingAmount();
-
-       
             Insurance insurance = new Insurance(policyName, insuranceCompany, claimAmount);
             insurance.setCoverage(accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoverage());
 

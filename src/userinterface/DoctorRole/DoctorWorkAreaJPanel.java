@@ -4,24 +4,22 @@
  */
 package userinterface.DoctorRole;
 
-import Business.EcoSystem;
+
 import Business.Enterprise.Enterprise;
 import Business.Organization.DoctorOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.PatientTreatmentWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
-import java.util.HashMap;
-import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import userinterface.HealthcareAccountantRole.CreateAppointmentJPanel;
+import javax.swing.table.TableRowSorter;
+
 
 /**
  *
- * @author raunak
+ * @author Pooja
  */
 public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -63,12 +61,11 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             row[7] = request.getStatus();
 
             model.addRow(row);
-//            if(patientToLab.get((PatientTreatmentWorkRequest)request) == null)
-//            {
-//                patientToLab.put((PatientTreatmentWorkRequest)request, null);
-//            }
 
         }
+        
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        workRequestJTable.setRowSorter(sorter);
     }
 
     /**

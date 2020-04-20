@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  *
- * @author MyPC1
+ * @author Pooja
  */
 public class HealthCenterEnterprise extends Enterprise {
 
