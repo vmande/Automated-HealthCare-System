@@ -8,7 +8,10 @@ import Business.Organization.Organization.Type;
 import static Business.Organization.Organization.Type.InsuranceFinanceOrganization;
 import java.util.ArrayList;
 
-
+/**
+ *
+ * @author raunak
+ */
 public class OrganizationDirectory {
     
     private ArrayList<Organization> organizationList;

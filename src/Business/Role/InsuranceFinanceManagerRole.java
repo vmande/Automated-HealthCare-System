@@ -10,12 +10,18 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.InsuranceFinanceOrganization;
 
+import Business.Organization.InsurancePolicyPlannerOrganization;
 import Business.Organization.Organization;
+import static Business.Organization.Organization.Type.InsuranceFinanceOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.InsuranceFinanceRole.InsuranceFinanceWorkAreaJPanel;
+import userinterface.InsurancePolicyPlannerRole.InsurancePolicyPlannerWorkAreaJPanel;
 
-
+/**
+ *
+ * @author ankit
+ */
 public class InsuranceFinanceManagerRole extends Role{
 
     @Override

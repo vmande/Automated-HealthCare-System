@@ -8,7 +8,10 @@ package Business.Enterprise;
 import Business.Organization.OrganizationDirectory;
 import java.util.ArrayList;
 
-
+/**
+ *
+ * @author MyPC1
+ */
 public class EnterpriseDirectory {
     private ArrayList<Enterprise> enterpriseList;
    
@@ -33,12 +36,12 @@ public class EnterpriseDirectory {
             enterpriseList.add(enterprise);
         }
         
-//        else if(type == Enterprise.EnterpriseType.Government)
-//        {
-//            enterprise =  new GovernmentEnterprise(name);
-//            enterpriseList.add(enterprise);
-//            
-//        }
+        else if(type == Enterprise.EnterpriseType.Government)
+        {
+            enterprise =  new GovernmentEnterprise(name);
+            enterpriseList.add(enterprise);
+            
+        }
         
         else if(type == Enterprise.EnterpriseType.InsuranceCompany)
         {

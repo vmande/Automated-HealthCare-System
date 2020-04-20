@@ -6,12 +6,18 @@
 package userinterface.InsuranceAgentRole;
 
 import Business.Enterprise.Enterprise;
+
+import Business.Organization.HealthCareOfficerOrganization;
+
 import Business.Organization.InsuranceAgentOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.util.UUID;
 import javax.swing.JPanel;
+
+import userinterface.HealthcareAccountantRole.CreateAppointmentJPanel;
+
 
 
 public class InsuranceAgentWorkAreaJPanel extends javax.swing.JPanel {
@@ -42,17 +48,17 @@ public class InsuranceAgentWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+
         btnAddNewUser = new javax.swing.JButton();
         btnProcessInsuranceRequests = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(30, 123, 123));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Insurance Agent Work Area ");
+        btnAddNewUser.setBackground(new java.awt.Color(0, 153, 255));
+        btnAddNewUser.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
-        btnAddNewUser.setBackground(new java.awt.Color(255, 204, 0));
         btnAddNewUser.setText("Add New Customer");
         btnAddNewUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,7 +66,12 @@ public class InsuranceAgentWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnProcessInsuranceRequests.setBackground(new java.awt.Color(255, 204, 0));
+        add(btnAddNewUser);
+        btnAddNewUser.setBounds(0, 10, 184, 41);
+
+        btnProcessInsuranceRequests.setBackground(new java.awt.Color(0, 153, 255));
+        btnProcessInsuranceRequests.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+
         btnProcessInsuranceRequests.setText("Process Insurance Requests");
         btnProcessInsuranceRequests.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,33 +79,13 @@ public class InsuranceAgentWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(btnAddNewUser, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(btnProcessInsuranceRequests))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(219, 219, 219)
-                        .addComponent(jLabel1)))
-                .addContainerGap(188, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel1)
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnProcessInsuranceRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddNewUser, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(242, Short.MAX_VALUE))
-        );
+        add(btnProcessInsuranceRequests);
+        btnProcessInsuranceRequests.setBounds(490, 380, 200, 39);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/health insurance.gif"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(1, 5, 690, 430);
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewUserActionPerformed
@@ -116,6 +107,8 @@ public class InsuranceAgentWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddNewUser;
     private javax.swing.JButton btnProcessInsuranceRequests;
-    private javax.swing.JLabel jLabel1;
+
+    private javax.swing.JLabel jLabel2;
+
     // End of variables declaration//GEN-END:variables
 }

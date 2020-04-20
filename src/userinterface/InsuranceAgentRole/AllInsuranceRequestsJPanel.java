@@ -6,11 +6,17 @@
 package userinterface.InsuranceAgentRole;
 
 import Business.Enterprise.Enterprise;
+
+import Business.Organization.AccountantOrganization;
 import Business.Organization.InsuranceAgentOrganization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.AccountantBillingRequest;
+import Business.WorkQueue.GovernmentFundRequest;
 import Business.WorkQueue.InsuranceWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import java.awt.Component;
+
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -51,13 +57,13 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btnAssign = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(30, 123, 123));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Process Requests");
 
-        tblInsuranceWorkTable.setBackground(new java.awt.Color(153, 255, 153));
+        tblInsuranceWorkTable.setBackground(new java.awt.Color(0, 153, 255));
+
         tblInsuranceWorkTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -92,7 +98,9 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblInsuranceWorkTable);
 
-        btnProcessRequest.setBackground(new java.awt.Color(255, 204, 0));
+
+        btnProcessRequest.setBackground(new java.awt.Color(0, 153, 255));
+
         btnProcessRequest.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnProcessRequest.setText("Process Request");
         btnProcessRequest.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +109,9 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(255, 204, 0));
+
+        btnBack.setBackground(new java.awt.Color(0, 153, 255));
+
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +120,9 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnAssign.setBackground(new java.awt.Color(255, 204, 0));
+
+        btnAssign.setBackground(new java.awt.Color(0, 153, 255));
+
         btnAssign.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAssign.setText("Assign To Me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -126,34 +138,44 @@ public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(322, 322, 322)
-                        .addComponent(btnAssign)
-                        .addGap(61, 61, 61)
-                        .addComponent(btnProcessRequest))
-                    .addGroup(layout.createSequentialGroup()
+
                         .addGap(23, 23, 23)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 972, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(322, 322, 322)
+                                .addComponent(btnAssign)
+                                .addGap(61, 61, 61)
+                                .addComponent(btnProcessRequest))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
                                 .addComponent(btnBack)
-                                .addGap(252, 252, 252)
-                                .addComponent(jLabel1)))))
-                .addContainerGap())
+                                .addGap(265, 265, 265)
+                                .addComponent(jLabel1)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(23, 23, 23))
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(btnBack))
-                .addGap(26, 26, 26)
+
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnBack)))
+                .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnProcessRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(180, Short.MAX_VALUE))
+                    .addComponent(btnProcessRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAssign, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(190, Short.MAX_VALUE))
+
         );
     }// </editor-fold>//GEN-END:initComponents
 

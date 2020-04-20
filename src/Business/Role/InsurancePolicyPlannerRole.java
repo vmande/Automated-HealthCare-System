@@ -14,7 +14,10 @@ import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.InsurancePolicyPlannerRole.InsurancePolicyPlannerWorkAreaJPanel;
 
-
+/**
+ *
+ * @author ankit
+ */
 public class InsurancePolicyPlannerRole extends Role{
 
     @Override

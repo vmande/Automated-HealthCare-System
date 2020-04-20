@@ -5,7 +5,6 @@
  */
 package Business.Insurance;
 
-
 public class Insurance {
 
     private String policyName;

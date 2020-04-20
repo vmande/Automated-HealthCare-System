@@ -5,9 +5,13 @@
  */
 package Business.Patient;
 
+import Business.Insurance.Insurance;
 import Business.InsuranceCustomer.InsuranceCustomer;
 
-
+/**
+ *
+ * @author ankit
+ */
 public class Patient {
 
     private String patientId;

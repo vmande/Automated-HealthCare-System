@@ -8,7 +8,10 @@ import Business.Role.DoctorRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
-
+/**
+ *
+ * @author raunak
+ */
 public class DoctorOrganization extends Organization{
 
     public DoctorOrganization() {

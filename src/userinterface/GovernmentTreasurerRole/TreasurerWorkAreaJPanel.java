@@ -19,7 +19,10 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import userinterface.LabAssistantRole.ProcessWorkRequestJPanel;
 
-
+/**
+ *
+ * @author Sourav
+ */
 public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
@@ -55,13 +58,12 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         btnAssign = new javax.swing.JButton();
         requestGovSecretaryBtn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(30, 123, 123));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Treasurer Work Area ");
 
-        workRequestJTable.setBackground(new java.awt.Color(153, 255, 153));
+        workRequestJTable.setBackground(new java.awt.Color(0, 153, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -90,7 +92,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        btnAssign.setBackground(new java.awt.Color(255, 204, 51));
+        btnAssign.setBackground(new java.awt.Color(0, 153, 255));
         btnAssign.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAssign.setText("Assign To Me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +101,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        requestGovSecretaryBtn.setBackground(new java.awt.Color(255, 204, 51));
+        requestGovSecretaryBtn.setBackground(new java.awt.Color(0, 153, 255));
         requestGovSecretaryBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         requestGovSecretaryBtn.setText("Process Request");
         requestGovSecretaryBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +122,6 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
                         .addGap(214, 214, 214))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnAssign)
                         .addGap(77, 77, 77)
                         .addComponent(requestGovSecretaryBtn)

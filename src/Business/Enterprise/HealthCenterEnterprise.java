@@ -11,7 +11,10 @@ import Business.Role.Role;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ *
+ * @author MyPC1
+ */
 public class HealthCenterEnterprise extends Enterprise {
 
     private PatientDirectory patientDirectory;

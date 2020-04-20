@@ -5,11 +5,15 @@
  */
 package Business.Organization;
 
+import Business.Role.GovernmentHealthOfficerRole;
 import Business.Role.InsuranceAgentRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
-
+/**
+ *
+ * @author Lionel
+ */
 public class InsuranceAgentOrganization extends Organization {
 
     public InsuranceAgentOrganization() {

@@ -17,7 +17,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-
+/**
+ *
+ * @author Sourav
+ */
 public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
@@ -53,9 +56,9 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
         processRequestBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(30, 123, 123));
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        workRequestJTable.setBackground(new java.awt.Color(153, 255, 153));
+        workRequestJTable.setBackground(new java.awt.Color(0, 153, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -84,7 +87,7 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        btnAssign.setBackground(new java.awt.Color(255, 204, 51));
+        btnAssign.setBackground(new java.awt.Color(0, 153, 255));
         btnAssign.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAssign.setText("Assign To Me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +96,7 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        processRequestBtn.setBackground(new java.awt.Color(255, 204, 51));
+        processRequestBtn.setBackground(new java.awt.Color(0, 153, 255));
         processRequestBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         processRequestBtn.setText("Process Request");
         processRequestBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +106,6 @@ public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Secretary Work Area");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
