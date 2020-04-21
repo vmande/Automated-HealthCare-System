@@ -24,6 +24,15 @@ public class Patient {
     private String gender;
     private boolean isTreatmentFinished;
     private String appointmentDate;
+    private String patientEmail;
+
+    public String getPatientEmail() {
+        return patientEmail;
+    }
+
+    public void setPatientEmail(String patientEmail) {
+        this.patientEmail = patientEmail;
+    }
 
     private InsuranceCustomer insuranceCustomer;
 

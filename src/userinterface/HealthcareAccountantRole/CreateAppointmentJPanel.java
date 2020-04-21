@@ -117,6 +117,8 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtPatientIdentifier = new javax.swing.JTextField();
         btnResetPolicyNum = new javax.swing.JButton();
+        txtEmail = new javax.swing.JLabel();
+        txtPatientEmail = new javax.swing.JTextField();
 
         jLabel14.setText("Middle Name :");
 
@@ -281,6 +283,9 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtEmail.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtEmail.setText("Patient Email:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -293,6 +298,10 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(279, 279, 279)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtEmail)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtPatientEmail))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel10)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -394,7 +403,7 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
                         .addGap(40, 40, 40)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(477, 477, 477)
                         .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -419,12 +428,15 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
                         .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtPatientIdentifier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtEmail)
+                        .addComponent(txtPatientEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(txtPatientIdentifier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -452,7 +464,7 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -568,6 +580,15 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please provide Reason for visit");
             return;
 
+        }
+        if (txtPatientEmail.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please provide an Email ID");
+            return;
+
+        }
+        if (!usernamePatternCorrect(txtPatientEmail.getText().trim())) {
+            JOptionPane.showMessageDialog(null, "Please provide a valid email ID in the format xxxx@xx.xx");
+
         } else {
 
             String registrationDate = txtDate.getText().trim();
@@ -657,12 +678,13 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
 
             HealthCenterEnterprise healthCenterEnterprise = (HealthCenterEnterprise) enterprise;
             Patient patient = new Patient();
-            
+
             patient.setAppointmentDate(txtDate.getText());
             patient.setPatientId(patientId);
             patient.setPatientFirstName(firstName);
             patient.setPatientLastName(lastName);
             patient.setGender(gender);
+            patient.setPatientEmail(txtPatientEmail.getText().trim());
 
             patient.setContactNumber(phoneNo);
             patient.setPatientAge(age);
@@ -784,6 +806,8 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         txtPolicyName.setText("");
         txtInsuranceCompany.setText("");
         txtCoverage.setText("");
+        txtPatientEmail.setText("");
+
 
     }//GEN-LAST:event_btnResetPolicyNumActionPerformed
 
@@ -828,10 +852,12 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCoverage;
     private javax.swing.JTextField txtDate;
+    private javax.swing.JLabel txtEmail;
     private javax.swing.JTextField txtFirstName;
     private javax.swing.JTextField txtHomePhone;
     private javax.swing.JTextField txtInsuranceCompany;
     private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtPatientEmail;
     private javax.swing.JTextField txtPatientId11;
     private javax.swing.JTextField txtPatientIdentifier;
     private javax.swing.JTextField txtPatientSSN;
@@ -919,23 +945,24 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         txtSSN.setText(patient.getSocialSecurityNumber());
         txtAge.setText(patient.getPatientAge());
         txtAddress.setText(patient.getAddress());
-        
+
         String sex = patient.getGender();
-        
-        if(sex.equals("Male"))
-        {
+
+        if (sex.equals("Male")) {
             radioBtnMale.setSelected(true);
-        }
-        
-        else if(sex.equals("Female"))
-        {
+        } else if (sex.equals("Female")) {
             radioBtnFemale.setSelected(true);
-        }
-        
-        else if(sex.equals("Other"))
-        {
+        } else if (sex.equals("Other")) {
             radioBtnOther.setSelected(true);
         }
+
+    }
+
+    private boolean usernamePatternCorrect(String username) {
+        Pattern p = Pattern.compile("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+        Matcher m = p.matcher(username);
+        boolean b = m.matches();
+        return true;
 
     }
 }
