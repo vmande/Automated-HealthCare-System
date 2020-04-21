@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *
- * @author ankit
+ * @author Vaishnavi
  */
 public class InsuranceCompanyEnterprise extends Enterprise {
 

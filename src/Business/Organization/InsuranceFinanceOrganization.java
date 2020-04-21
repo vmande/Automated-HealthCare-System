@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Lionel
+ * @author Vaishnavi
  */
 public class InsuranceFinanceOrganization extends Organization {
 
