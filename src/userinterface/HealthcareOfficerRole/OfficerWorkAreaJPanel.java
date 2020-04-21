@@ -10,15 +10,12 @@ import Business.Organization.HealthCareOfficerOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.GovernmentFundRequest;
-import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import userinterface.DoctorRole.RequestLabTestJPanel;
-import userinterface.GovernmentTreasurerRole.TreasurerProcessWorkRequestJPanel;
-import userinterface.SystemAdminWorkArea.ManageNetworkJPanel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -160,7 +157,7 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
                 populateTable();
                 JOptionPane.showMessageDialog(null, "Success !! Request is assigned to you ");
             } else {
-                JOptionPane.showMessageDialog(null, "Can't assign this work request, as the work request is in " + request.getStatus() + " status" , "Warning!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Can't assign this work request, as the work request is in " + request.getStatus() + " status", "Warning!", JOptionPane.WARNING_MESSAGE);
             }
         }
     }
@@ -186,11 +183,11 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Assign the request first");
                 return;
             }
-            if(!userAccount.equals(request.getReceiver())){
-             JOptionPane.showMessageDialog(null, "Not Authorized", "Warning!", JOptionPane.WARNING_MESSAGE);
+            if (!userAccount.equals(request.getReceiver())) {
+                JOptionPane.showMessageDialog(null, "Not Authorized", "Warning!", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            
+
             if (!userAccount.getEmployee().equals(request.getReceiver().getEmployee())) {
                 JOptionPane.showMessageDialog(null, "Request assigned to other Officer", "Warning!", JOptionPane.WARNING_MESSAGE);
                 return;
@@ -234,5 +231,7 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
 
             model.addRow(row);
         }
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        workRequestJTable.setRowSorter(sorter);
     }
 }

@@ -12,6 +12,7 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -42,6 +43,9 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             if(!(organization instanceof PatientOrganization))
             organizationJComboBox.addItem(organization);
         }
+        DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        organizationJTable.setRowSorter(sorter);
     }
     
     public void populateOrganizationEmpComboBox(){

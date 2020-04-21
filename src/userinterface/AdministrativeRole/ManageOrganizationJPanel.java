@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -60,6 +61,8 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
             model.addRow(row);
         }
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        organizationJTable.setRowSorter(sorter);
     }
 
     /**
@@ -215,18 +218,17 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         for (int i = 0; i < model.getRowCount(); i++) {
             orgName.add(model.getValueAt(i, 1).toString());
         }
-      
-            if(orgName.contains(type.getValue())){
+
+        if (orgName.contains(type.getValue())) {
             JOptionPane.showMessageDialog(null, "Organization already exists!! ");
             return;
-            }
-            else{
-                directory.createOrganization(type);
-            }
-        
+        } else {
+            directory.createOrganization(type);
+        }
+
         populateTable();
-        
-        
+
+
     }//GEN-LAST:event_addJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -242,13 +244,12 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row first from the table to view details", "Warning!", JOptionPane.WARNING_MESSAGE);
             return;
-        }
-        else{
+        } else {
             Organization organization = (Organization) organizationJTable.getValueAt(selectedRow, 1);
             enterprise.getOrganizationDirectory().getOrganizations().remove(organization);
             populateTable();
         }
-       
+
     }//GEN-LAST:event_btnDeleteOrgActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
