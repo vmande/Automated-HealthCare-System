@@ -25,5 +25,5 @@ public class InsuranceAgentOrganization extends Organization {
         roles.add(new InsuranceAgentRole());
         return roles;
     }
-    
+
 }
