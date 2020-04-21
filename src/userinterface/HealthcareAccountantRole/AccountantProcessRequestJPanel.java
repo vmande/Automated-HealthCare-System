@@ -21,6 +21,7 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.UUID;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -341,9 +342,18 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void btnCOllectCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCOllectCashActionPerformed
-        accountBillingRequest.setStatus("Patient Transaction Completed");
-        JOptionPane.showMessageDialog(null, "Amount received from Patient");
-        btnCOllectCash.setEnabled(false);
+//        accountBillingRequest.setStatus("Patient Transaction Completed");
+//        JOptionPane.showMessageDialog(null, "Amount received from Patient");
+//        btnCOllectCash.setEnabled(false);
+
+//        EmailBillingInformationToPatient emailBillingInformationToPatient = new EmailBillingInformationToPatient(userProcessContainer,accountBillingRequest.getPatient());
+//        container.add("PatientRegistrationForm", registerPatientForm);
+//        CardLayout cardLayout = (CardLayout) container.getLayout();
+//        cardLayout.next(container);
+      
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        userProcessContainer.add("EmailBillingInformationToPatient", new EmailBillingInformationToPatient(userProcessContainer, accountBillingRequest));
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCOllectCashActionPerformed
 
 
