@@ -36,7 +36,7 @@ import javax.swing.JPanel;
  * @author Pooja
  */
 public class CreateAppointmentJPanel extends javax.swing.JPanel {
-
+    
     private JPanel userProcessContainer;
     private UserAccount userAccount;
     private Enterprise enterprise;
@@ -53,9 +53,9 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.ecosystem = ecoSystem;
         this.patientId = patientId;
-
+        
         populateField();
-
+        
     }
 
     /**
@@ -525,23 +525,23 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_radioBtnPatientInsuranceYesActionPerformed
 
     private void radioBtnPatientInsuranceNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnPatientInsuranceNoActionPerformed
-
+        
         lblPolicyNum.setEnabled(false);
         btnFindInsurance.setEnabled(false);
         txtPolicyNum.setEnabled(false);
         txtInsuranceCompany.setEnabled(false);
         txtPolicyName.setEnabled(false);
-
+        
         txtCoverage.setEnabled(false);
-
+        
         lblCoverage.setEnabled(false);
         lblInsCompany.setEnabled(false);
-
+        
         lblPolicyName.setEnabled(false);
     }//GEN-LAST:event_radioBtnPatientInsuranceNoActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-
+        
         if (txtFirstName.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please provide first name");
             return;
@@ -570,29 +570,34 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please provide address");
             return;
         }
-
+        
         if (buttonGroup1.isSelected(null)) {
             JOptionPane.showMessageDialog(null, "Please choose if Patient covered by Insurance");
             return;
         }
-
+        
         if (txtReasonForVisit.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please provide Reason for visit");
             return;
-
+            
         }
         if (txtPatientEmail.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please provide an Email ID");
             return;
-
+            
         }
         if (!usernamePatternCorrect(txtPatientEmail.getText().trim())) {
             JOptionPane.showMessageDialog(null, "Please provide a valid email ID in the format xxxx@xx.xx");
-
-        } else {
-
+            
+        }
+        if(checkEmailDuplication(txtPatientEmail.getText().trim())){
+            JOptionPane.showMessageDialog(null, "This email is associated to another patient");
+            return;
+        }
+        else {
+            
             String registrationDate = txtDate.getText().trim();
-
+            
             String firstName = txtFirstName.getText().trim();
             String lastName = txtLastName.getText().trim();
             String gender = "Male";
@@ -601,60 +606,60 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
             } else if (radioBtnOther.isSelected()) {
                 gender = "Other";
             }
-
+            
             String phoneNo = txtHomePhone.getText().trim();
-
+            
             if (!phonePatternCorrect()) {
                 JOptionPane.showMessageDialog(null, "/* Following are valid phone number examples */             \n"
                         + "              \"1234567890\", \"123-456-7890\", \"(123)4567890\", \"(123)456-7890\",\n"
                         + "              /* Following are invalid phone numbers */ \n"
                         + "              \"(1234567890)\",\"123)4567890\", \"12345678901\", \"(1)234567890\",");
                 txtHomePhone.setBorder(BorderFactory.createLineBorder(Color.RED));
-
+                
                 return;
             }
-
+            
             if (phonePatternCorrect()) {
                 txtHomePhone.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-
+                
             }
-
+            
             String ssn = txtSSN.getText().trim();
-
+            
             if (!ssnPatternCheck()) {
                 JOptionPane.showMessageDialog(null, "/* United States Social Security numbers are nine-digit numbers in the format AAA-GG-SSSS with following rules. */             \n"
                         + "              \"The first three digits called the area number. The area number cannot be 000, 666, or between 900 and 999\",\n"
                         + "                \" Digits four and five are called the group number and range from 01 to 99\",\n"
                         + "              \"The last four digits are serial numbers from 0001 to 9999.\"");
                 txtSSN.setBorder(BorderFactory.createLineBorder(Color.RED));
-
+                
                 return;
             }
-
+            
             if (ssnPatternCheck()) {
                 txtSSN.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-
+                
             }
-
+            
             String age = txtAge.getText().trim();
-
+            
             try {
                 Integer.parseInt(age);
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Please provide integer values in Age textfield");
                 return;
             }
-
+            
             String address = txtAddress.getText().trim();
             boolean hasInsurance = false;
-
+            
             String policyNumber = txtPolicyNum.getText().trim();
             if (radioBtnPatientInsuranceYes.isSelected()) {
                 if (policyNumber.equals("")) {
                     JOptionPane.showMessageDialog(null, "Provide policy number");
                     return;
                 }
-
+                
                 if (txtPolicyName.getText().equals("")) {
                     JOptionPane.showMessageDialog(null, "No Policy found, please provide correct policy number");
                     return;
@@ -664,37 +669,37 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
             String policyName = String.valueOf(txtPolicyName.getText());
             String coverString = txtCoverage.getText().trim();
             double coverage = coverString.equals("") ? 0 : Double.parseDouble(txtCoverage.getText().trim());
-
+            
             String reasonForVisit = txtReasonForVisit.getText().trim();
-
+            
             if (hasInsurance) {
                 if (txtPolicyNum.getText().equals("")) {
                     return;
                 }
             }
-
+            
             Insurance insurance = new Insurance(policyName, insuranceCompany, coverage);
             InsuranceCustomer insuranceCustomer = new InsuranceCustomer(insurance, policyNumber);
-
+            
             HealthCenterEnterprise healthCenterEnterprise = (HealthCenterEnterprise) enterprise;
             Patient patient = new Patient();
-
+            
             patient.setAppointmentDate(txtDate.getText());
             patient.setPatientId(patientId);
             patient.setPatientFirstName(firstName);
             patient.setPatientLastName(lastName);
             patient.setGender(gender);
             patient.setPatientEmail(txtPatientEmail.getText().trim());
-
+            
             patient.setContactNumber(phoneNo);
             patient.setPatientAge(age);
             patient.setSocialSecurityNumber(ssn);
             patient.setAddress(address);
-
+            
             patient.setInsuranceCustomer(insuranceCustomer);
-
+            
             healthCenterEnterprise.getPatientDirectory().getPatients().add(patient);
-
+            
             PatientTreatmentWorkRequest patientTreatmentWorkRequest = new PatientTreatmentWorkRequest(registrationDate, reasonForVisit, patient);
             patientTreatmentWorkRequest.setStatus("Waiting for Doctor");
             //   patientTreatmentWorkRequest.setSender(userAccount);
@@ -712,7 +717,7 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
                 refresh();
                 JOptionPane.showMessageDialog(null, "Patient Registered Successfully");
             }
-
+            
         }
     }//GEN-LAST:event_btnCreateActionPerformed
 
@@ -727,12 +732,12 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnFindPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindPatientActionPerformed
-
+        
         boolean isPatientFound = false;
         String ssn = txtPatientSSN.getText().trim();
         List<Network> networks = ecosystem.getNetworks();
         List<HealthCenterEnterprise> healthCenterEnterprises = new ArrayList<>();
-
+        
         for (Network network : networks) {
             for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
                 if (enterprise instanceof HealthCenterEnterprise) {
@@ -740,18 +745,18 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
                 }
             }
         }
-
+        
         for (HealthCenterEnterprise healthCenterEnterprise : healthCenterEnterprises) {
             List<Patient> patients = healthCenterEnterprise.getPatientDirectory().getPatients();
             for (Patient patient : patients) {
-                if (patient.getSocialSecurityNumber().equals(ssn)) {
+                if (ssn.equals(patient.getSocialSecurityNumber())) {
                     autopopulateFields(patient);
                     isPatientFound = true;
                 }
-
+                
             }
         }
-
+        
         if (!isPatientFound) {
             JOptionPane.showMessageDialog(null, "No patient Found");
         }
@@ -762,7 +767,7 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         String ssn = txtSSN.getText().trim();
         List<InsuranceCompanyEnterprise> insuranceEnterprises = new ArrayList<>();
         InsuranceCustomer matchedCustomer = null;
-
+        
         List<Network> networks = ecosystem.getNetworks();
         for (Network network : networks) {
             for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
@@ -771,17 +776,17 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
                 }
             }
         }
-
+        
         for (InsuranceCompanyEnterprise insuranceCompanyEnterprise : insuranceEnterprises) {
             List<InsuranceCustomer> insuranceCustomers = insuranceCompanyEnterprise.getInsuranceCustomerDirectory().getInsuranceCustomers();
             for (InsuranceCustomer insuranceCustomer : insuranceCustomers) {
                 if (insurancePolicyNumber.equals(insuranceCustomer.getInsurancePolicyNumber()) && ssn.equals(insuranceCustomer.getSsn())) {
                     matchedCustomer = insuranceCustomer;
-
+                    
                 }
             }
         }
-
+        
         if (matchedCustomer != null) {
             txtInsuranceCompany.setText(matchedCustomer.getInsurance().getInsuranceCompany());
             txtPolicyName.setText(matchedCustomer.getInsurance().getPolicyName());
@@ -806,8 +811,7 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         txtPolicyName.setText("");
         txtInsuranceCompany.setText("");
         txtCoverage.setText("");
-        txtPatientEmail.setText("");
-
+        
 
     }//GEN-LAST:event_btnResetPolicyNumActionPerformed
 
@@ -871,25 +875,25 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         LocalDateTime localTimeUpdate = LocalDateTime.now();
         DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm:ss");
         txtDate.setText(localTimeUpdate.format(dateTimeFormat));
-
+        
         txtPatientIdentifier.setText(patientId);
-
+        
         lblPolicyNum.setEnabled(false);
         btnFindInsurance.setEnabled(false);
         txtPolicyNum.setEnabled(false);
         txtInsuranceCompany.setEnabled(false);
         txtPolicyName.setEnabled(false);
-
+        
         txtCoverage.setEnabled(false);
-
+        
         lblCoverage.setEnabled(false);
         lblInsCompany.setEnabled(false);
-
+        
         lblPolicyName.setEnabled(false);
     }
-
+    
     private void refresh() {
-
+        
         txtPatientIdentifier.setText(UUID.randomUUID().toString().substring(0, 7));
         txtFirstName.setText("");
         txtLastName.setText("");
@@ -898,45 +902,45 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         txtSSN.setText("");
         txtAddress.setText("");
         txtReasonForVisit.setText("");
-
+        txtPatientEmail.setText("");
         txtPolicyName.setText("");
         txtPolicyNum.setText("");
         txtCoverage.setText("");
         txtInsuranceCompany.setText("");
     }
-
+    
     private boolean phonePatternCorrect() {
-
+        
         Pattern pattern = Pattern.compile("\\d{10}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}");
         Matcher matcher = pattern.matcher(txtHomePhone.getText());
-
+        
         boolean b = false;
-
+        
         if (matcher.matches()) {
             b = true;
         } else {
             b = false;
         }
-
+        
         return b;
     }
-
+    
     private boolean ssnPatternCheck() {
-
+        
         Pattern pattern = Pattern.compile("^(?!000|666)[0-8][0-9]{2}-(?!00)[0-9]{2}-(?!0000)[0-9]{4}$");
         Matcher matcher = pattern.matcher(txtSSN.getText());
-
+        
         boolean b = false;
-
+        
         if (matcher.matches()) {
             b = true;
         } else {
             b = false;
         }
-
+        
         return b;
     }
-
+    
     private void autopopulateFields(Patient patient) {
         txtFirstName.setText(patient.getPatientFirstName());
         txtLastName.setText(patient.getPatientLastName());
@@ -945,9 +949,10 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         txtSSN.setText(patient.getSocialSecurityNumber());
         txtAge.setText(patient.getPatientAge());
         txtAddress.setText(patient.getAddress());
-
+        txtPatientEmail.setText(patient.getPatientEmail());
+        
         String sex = patient.getGender();
-
+        
         if (sex.equals("Male")) {
             radioBtnMale.setSelected(true);
         } else if (sex.equals("Female")) {
@@ -955,14 +960,41 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
         } else if (sex.equals("Other")) {
             radioBtnOther.setSelected(true);
         }
-
+        
     }
-
+    
     private boolean usernamePatternCorrect(String username) {
-        Pattern p = Pattern.compile("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+        Pattern p = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
         Matcher m = p.matcher(username);
         boolean b = m.matches();
-        return true;
-
+        return b;
+        
+    }
+    
+    private boolean checkEmailDuplication(String patientEmail){
+             boolean isPatientFound = false;
+        String ssn = txtPatientSSN.getText().trim();
+        List<Network> networks = ecosystem.getNetworks();
+        List<HealthCenterEnterprise> healthCenterEnterprises = new ArrayList<>();
+        
+        for (Network network : networks) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                if (enterprise instanceof HealthCenterEnterprise) {
+                    healthCenterEnterprises.add((HealthCenterEnterprise) enterprise);
+                }
+            }
+        }
+        
+        for (HealthCenterEnterprise healthCenterEnterprise : healthCenterEnterprises) {
+            List<Patient> patients = healthCenterEnterprise.getPatientDirectory().getPatients();
+            for (Patient patient : patients) {
+                if (patientEmail.equals(patient.getPatientEmail())) {
+                    isPatientFound = true;
+                    break;
+                }
+                
+            }
+        }
+        return isPatientFound;
     }
 }

@@ -131,7 +131,7 @@ public class EmailBillingInformationToPatient extends javax.swing.JPanel {
 
     private void btnSendEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendEmailActionPerformed
         String text = emailTxtFiled.getText();
-        if (emailTxtFiled.getText().equals(null)) {
+        if (emailTxtFiled.getText().trim().equals("")) {
             JOptionPane.showConfirmDialog(null, "You have not typed anything");
             return;
         }
@@ -179,15 +179,13 @@ public class EmailBillingInformationToPatient extends javax.swing.JPanel {
             // Set To: header field of the header.
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
             // Set Subject: header field
-            message.setSubject("Demo Report");
+            message.setSubject("Patient Billing Information");
 
             // Send the actual HTML message, as big as you like
             message.setContent("<h1>" + text + "</h1>", "text/html");
 
             // Send message
             Transport.send(message);
-            System.out.println("Sent message successfully....");
-            JOptionPane.showMessageDialog(null, "Sent email to patient !!");
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
