@@ -24,6 +24,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -627,5 +628,7 @@ public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
 
             dtm.addRow(row);
         }
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(dtm);
+        tblCustomer.setRowSorter(sorter);
     }
 }

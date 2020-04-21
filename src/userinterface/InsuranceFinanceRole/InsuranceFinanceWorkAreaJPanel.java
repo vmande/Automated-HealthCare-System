@@ -14,6 +14,7 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -230,6 +231,9 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
 
             model.addRow(row);
         }
+        
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        tblFinance.setRowSorter(sorter);
     }
 
 }
