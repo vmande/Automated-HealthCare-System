@@ -9,16 +9,14 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Organization.SecretaryOrganization;
 import Business.Organization.TreasurerOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.GovernmentSecretaryRole.SecretaryWorkAreaJPanel;
 import userinterface.GovernmentTreasurerRole.TreasurerWorkAreaJPanel;
 
 /**
  *
- * @author ankit
+ * @author 
  */
 public class GovernmentTreasurer extends Role{
 
