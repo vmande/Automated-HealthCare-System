@@ -276,9 +276,12 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
         String insuranceCompany = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompany();
         double claimAmount = Double.parseDouble(txtInsuranceClaimAmount.getText());
         double billAmount = accountBillingRequest.getBillingAmount();
+        if(("Patient Transaction Completed").equals(accountBillingRequest.getStatus())){
+            JOptionPane.showMessageDialog(null, "Insurance request sent for claim");
+            return;
+        }
             Insurance insurance = new Insurance(policyName, insuranceCompany, claimAmount);
             insurance.setCoverage(accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoverage());
-
             InsuranceCustomer insuranceCustomer = new InsuranceCustomer(insurance, policyNumber);
             insuranceCustomer.setCustomerFirstName(txtFirstName.getText().trim());
             insuranceCustomer.setCustomerLastName((txtLastName.getText().trim()));
