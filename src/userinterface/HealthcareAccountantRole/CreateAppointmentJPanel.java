@@ -590,10 +590,6 @@ public class CreateAppointmentJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please provide a valid email ID in the format xxxx@xx.xx");
             
         }
-        if(checkEmailDuplication(txtPatientEmail.getText().trim())){
-            JOptionPane.showMessageDialog(null, "This email is associated to another patient");
-            return;
-        }
         else {
             
             String registrationDate = txtDate.getText().trim();
