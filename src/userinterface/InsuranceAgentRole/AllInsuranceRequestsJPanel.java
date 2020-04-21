@@ -16,6 +16,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
+
+/**
+ *
+ * @author Vaishnavi
+ */
+
 public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
 
     /**

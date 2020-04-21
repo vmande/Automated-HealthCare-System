@@ -8,20 +8,17 @@ package userinterface.InsurancePolicyPlannerRole;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.InsuranceCompanyEnterprise;
 import Business.Insurance.Insurance;
-
-//import Business.Insurance.InsurancePolicy;
 import Business.Organization.InsurancePolicyPlannerOrganization;
 import Business.UserAccount.UserAccount;
-import java.awt.Color;
-
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-import javax.swing.table.JTableHeader;
-
-
+/**
+ *
+ * @author Vaishnavi
+ */
 public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;

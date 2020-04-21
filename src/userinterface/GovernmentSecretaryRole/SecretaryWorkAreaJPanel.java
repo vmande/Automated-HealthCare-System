@@ -6,7 +6,6 @@
 package userinterface.GovernmentSecretaryRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Organization.HealthCareOfficerOrganization;
 import Business.Organization.Organization;
 import Business.Organization.SecretaryOrganization;
 import Business.UserAccount.UserAccount;
@@ -19,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Sourav
+ * @author 
  */
 public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
 

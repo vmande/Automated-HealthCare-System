@@ -3,9 +3,7 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
-
     </Property>
   </Properties>
   <AuxValues>
@@ -23,7 +21,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
@@ -103,7 +100,6 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="txtInsuranceCoverage" min="-2" pref="140" max="-2" attributes="0"/>
                           </Group>
-
                           <Component id="btnAddCustomer" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -123,7 +119,6 @@
                   <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-
           </Group>
       </Group>
     </DimensionLayout>
@@ -131,7 +126,6 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="backBtn" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
@@ -201,13 +195,11 @@
                       <Component id="btnAddCustomer" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
-
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                   <Component id="txtAddress" alignment="1" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
-
               <EmptySpace pref="238" max="32767" attributes="0"/>
               <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -226,9 +218,7 @@
           <Font name="Tahoma" size="24" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
-
         </Property>
         <Property name="text" type="java.lang.String" value="Add New Customer"/>
       </Properties>
@@ -239,9 +229,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
-
         </Property>
         <Property name="text" type="java.lang.String" value="Policy Number "/>
       </Properties>
@@ -254,9 +242,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
-
         </Property>
         <Property name="text" type="java.lang.String" value="First Name"/>
       </Properties>
@@ -269,9 +255,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
-
         </Property>
         <Property name="text" type="java.lang.String" value="Last Name"/>
       </Properties>
@@ -284,9 +268,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
-
         </Property>
         <Property name="text" type="java.lang.String" value="SSN"/>
       </Properties>
@@ -299,9 +281,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
-
         </Property>
         <Property name="text" type="java.lang.String" value="Date of birth"/>
       </Properties>
@@ -314,11 +294,9 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Gender"/>
-
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
@@ -327,9 +305,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
-
         </Property>
         <Property name="text" type="java.lang.String" value="Address"/>
       </Properties>
@@ -340,11 +316,9 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Insurance Policy Name"/>
-
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cmbInsuranceName">
@@ -361,9 +335,7 @@
     <Component class="javax.swing.JButton" name="btnAddCustomer">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="ff" green="99" red="0" type="rgb"/>
-
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="11" style="1"/>
@@ -387,9 +359,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
-
         </Property>
         <Property name="text" type="java.lang.String" value="Personal Information"/>
       </Properties>
@@ -400,9 +370,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
-
         </Property>
         <Property name="text" type="java.lang.String" value="Insurance  Information"/>
       </Properties>
@@ -413,9 +381,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
-
         </Property>
         <Property name="text" type="java.lang.String" value="Phone"/>
       </Properties>
@@ -428,9 +394,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="33" green="33" red="0" type="rgb"/>
-
         </Property>
         <Property name="text" type="java.lang.String" value="Insurance Coverage %"/>
       </Properties>
@@ -458,9 +422,7 @@
         <Component class="javax.swing.JTable" name="tblCustomer">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
               <Color blue="ff" green="99" red="0" type="rgb"/>
-
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="4" rowCount="4">
@@ -515,9 +477,7 @@
     <Component class="javax.swing.JButton" name="backBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-
           <Color blue="ff" green="99" red="0" type="rgb"/>
-
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="11" style="1"/>
@@ -528,7 +488,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBtnActionPerformed"/>
       </Events>
     </Component>
-
     <Component class="javax.swing.JLabel" name="jLabel13">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
@@ -537,6 +496,5 @@
         </Property>
       </Properties>
     </Component>
-
   </SubComponents>
 </Form>

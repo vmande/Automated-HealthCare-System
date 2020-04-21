@@ -8,18 +8,17 @@ package userinterface.InsuranceFinanceRole;
 import Business.Enterprise.Enterprise;
 import Business.Organization.InsuranceFinanceOrganization;
 import Business.UserAccount.UserAccount;
-
-import Business.WorkQueue.GovernmentFundRequest;
 import Business.WorkQueue.InsuranceWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
-import java.util.List;
-
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-
+/**
+ *
+ * @author Vaishnavi
+ */
 public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
@@ -227,7 +226,7 @@ public class InsuranceFinanceWorkAreaJPanel extends javax.swing.JPanel {
             row[4] = insuranceworkRequest.getBillAmount();
             row[5] = insuranceworkRequest.getStatus();
             row[6] = insuranceworkRequest.getInsuranceCompany();
-            row[7] = insuranceworkRequest.getReceiver() == null?"": insuranceworkRequest.getReceiver().getEmployee().getName();
+            row[7] = insuranceworkRequest.getReceiver() == null ? "" : insuranceworkRequest.getReceiver().getEmployee().getName();
 
             model.addRow(row);
         }

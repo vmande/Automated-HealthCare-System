@@ -13,11 +13,8 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
 
-import java.awt.Component;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Calendar;
-import java.util.Date;
 
 import java.util.List;
 import java.util.UUID;
@@ -27,6 +24,11 @@ import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+
+/**
+ *
+ * @author Vaishnavi
+ */
 
 public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {
 

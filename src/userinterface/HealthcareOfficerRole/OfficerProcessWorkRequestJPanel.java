@@ -6,22 +6,18 @@
 package userinterface.HealthcareOfficerRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.Organization.SecretaryOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.GovernmentFundRequest;
-import Business.WorkQueue.LabTestWorkRequest;
-import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import userinterface.DoctorRole.DoctorWorkAreaJPanel;
 
 /**
  *
- * @author Sourav
+ * @author 
  */
 public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
 

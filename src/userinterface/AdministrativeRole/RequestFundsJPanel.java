@@ -9,14 +9,11 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.HealthCareOfficerOrganization;
-import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.GovernmentFundRequest;
-import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
-import java.awt.Component;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -24,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ankit
+ * @author Vaishnavi
  */
 public class RequestFundsJPanel extends javax.swing.JPanel {
 
@@ -54,8 +51,6 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
             row[0] = String.valueOf(((GovernmentFundRequest) request).getLocation());
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
-            // String result = ((LabTestWorkRequest) request).getTestResult();
-            // row[3] = result == null ? "Waiting" : result;
             row[3] = String.valueOf(((GovernmentFundRequest) request).getRequestAmount());
             model.addRow(row);
             if (request.getStatus().equalsIgnoreCase("Accepted")) {
@@ -233,17 +228,17 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "All fields are mandatory");
         } else {
             try {
-            Integer.parseInt(population);
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Please type an Integer for population");
-            return;
-        }
-        try {
-            Double.parseDouble(amount);
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Please type an Integer value for amount");
-            return;
-        }
+                Integer.parseInt(population);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please type an Integer for population");
+                return;
+            }
+            try {
+                Double.parseDouble(amount);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please type an Integer value for amount");
+                return;
+            }
             GovernmentFundRequest governmentFundRequest = new GovernmentFundRequest(location, Integer.parseInt(population), Double.parseDouble(amount));
             governmentFundRequest.setSender(userAccount);
             governmentFundRequest.setStatus("Sent");
