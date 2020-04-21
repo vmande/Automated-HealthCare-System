@@ -5,6 +5,10 @@
  */
 package Business.Insurance;
 
+/**
+ *
+ * @author Vaishnavi
+ */
 public class Insurance {
 
     private String policyName;
@@ -26,14 +30,6 @@ public class Insurance {
     public void setPolicyName(String policyType) {
         this.policyName = policyType;
     }
-
-//    public String getPolicyNumber() {
-//        return policyNumber;
-//    }
-//
-//    public void setPolicyNumber(String policyNumber) {
-//        this.policyNumber = policyNumber;
-//    }
 
     public double getMonthlyPremium() {
         return monthlyPremium;
