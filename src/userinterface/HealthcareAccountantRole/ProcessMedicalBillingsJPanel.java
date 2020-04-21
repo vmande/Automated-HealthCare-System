@@ -266,7 +266,7 @@ public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
                         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                         layout.next(userProcessContainer);
                     } else {
-                        JOptionPane.showMessageDialog(null, "Cannot process Request as request is in 12345  " + accountBillingRequest.getStatus());
+                        JOptionPane.showMessageDialog(null, "Cannot process Request as request is in " + accountBillingRequest.getStatus());
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Not authorised!");
