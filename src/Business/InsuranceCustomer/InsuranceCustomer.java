@@ -5,12 +5,16 @@
  */
 package Business.InsuranceCustomer;
 
+/**
+ *
+ * @author Vaishnavi
+ */
+
 import Business.Insurance.Insurance;
 
 
 public class InsuranceCustomer {
 
-    // private int customerPolicyNumber;
     private String customerLastName;
     private String customerFirstName;
     private String ssn;
@@ -19,7 +23,6 @@ public class InsuranceCustomer {
     private String phoneNumber;
     private String address;
     private String gender;
-//    private String insuranceType;
     private String policyStartDate;
     private String policyEndDate;
 
@@ -134,10 +137,6 @@ public class InsuranceCustomer {
         this.insurancePolicyNumber = insurancePolicyNumber;
     }
 
-//    @Override
-//    public String toString() {
-//        return customerFirstName + " " + customerLastName;
-//    }
     @Override
     public String toString() {
         return insurancePolicyNumber;
