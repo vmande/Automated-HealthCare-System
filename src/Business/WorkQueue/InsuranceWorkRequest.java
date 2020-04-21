@@ -6,11 +6,10 @@
 package Business.WorkQueue;
 
 import Business.InsuranceCustomer.InsuranceCustomer;
-import Business.Patient.Patient;
 
 /**
  *
- * @author Sourav
+ * @author Vaishnavi
  */
 public class InsuranceWorkRequest extends WorkRequest {
 

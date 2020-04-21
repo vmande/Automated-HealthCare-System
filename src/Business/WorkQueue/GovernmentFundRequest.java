@@ -7,7 +7,7 @@ package Business.WorkQueue;
 
 /**
  *
- * @author ankit
+ * @author
  */
 public class GovernmentFundRequest extends WorkRequest {
 

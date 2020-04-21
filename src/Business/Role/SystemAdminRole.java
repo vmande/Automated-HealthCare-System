@@ -11,10 +11,6 @@ import Business.UserAccount.UserAccount;
 import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author raunak
- */
 public class SystemAdminRole extends Role{
 
     @Override
