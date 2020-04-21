@@ -38,15 +38,11 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
      */
     public ManageEnterpriseAdminJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
-        //usernameJLabel.setForeground(Color.BLACK);
         usernameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         passwordJPasswordField.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         reEnterPasswordJPasswordField.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        //passwordJLabel.setForeground(Color.BLACK);
-        //rePasswordJLabel.setForeground(Color.BLACK);
         nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        //nameJLabel.setForeground(Color.BLACK);
-
+        
         this.userProcessContainer = userProcessContainer;
         this.system = system;
 
@@ -69,6 +65,8 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
                     model.addRow(row);
                 }
+                TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        enterpriseJTable.setRowSorter(sorter);
             }
         }
          TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);

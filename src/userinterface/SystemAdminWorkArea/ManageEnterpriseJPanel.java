@@ -14,6 +14,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
@@ -41,11 +42,12 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 Object[] row = new Object[3];
                 row[0] = enterprise;
                 row[1] = network;
-//                row[2] = enterprise.getEnterpriseType().getValue();
                 row[2] = enterprise.getEnterpriseType().getValue();
 
                 model.addRow(row);
             }
+            TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        enterpriseJTable.setRowSorter(sorter);
         }
     }
 
