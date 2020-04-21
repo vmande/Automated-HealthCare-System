@@ -356,6 +356,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
                     CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                     userProcessContainer.add("RequestBillingJPanel", new RequestBillingJPanel(userProcessContainer, userAccount, enterprise, workRequest));
+                    workRequest.getPatient().setIsTreatmentFinished(true);
                     layout.next(userProcessContainer);
                 } else {
                     if(workRequest.getStatus().equalsIgnoreCase("Consultation Completed"))
