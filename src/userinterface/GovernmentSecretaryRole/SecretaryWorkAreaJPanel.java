@@ -19,7 +19,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author Sourav
+ * @author 
  */
 public class SecretaryWorkAreaJPanel extends javax.swing.JPanel {
 

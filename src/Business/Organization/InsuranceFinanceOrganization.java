@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Lionel
+ * @author Vaishnavi
  */
 public class InsuranceFinanceOrganization extends Organization {
 
@@ -25,5 +25,5 @@ public class InsuranceFinanceOrganization extends Organization {
         roles.add(new InsuranceFinanceManagerRole());
         return roles;
     }
-    
+
 }

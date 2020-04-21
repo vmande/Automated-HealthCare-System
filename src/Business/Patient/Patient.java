@@ -5,7 +5,6 @@
  */
 package Business.Patient;
 
-import Business.Insurance.Insurance;
 import Business.InsuranceCustomer.InsuranceCustomer;
 
 /**

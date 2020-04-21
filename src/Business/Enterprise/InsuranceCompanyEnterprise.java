@@ -10,11 +10,12 @@ import Business.InsuranceCustomer.InsuranceCustomerDirectory;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import java.util.ArrayList;
+//import java.util.List;
 import java.util.List;
 
 /**
  *
- * @author ankit
+ * @author Vaishnavi
  */
 public class InsuranceCompanyEnterprise extends Enterprise {
 

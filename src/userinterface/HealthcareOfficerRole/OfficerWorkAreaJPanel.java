@@ -19,7 +19,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author ankit
+ * @author
  */
 public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -225,7 +225,6 @@ public class OfficerWorkAreaJPanel extends javax.swing.JPanel {
             } else {
                 row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
             }
-            //row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
             row[3] = request.getStatus();
             row[4] = ((GovernmentFundRequest) request).getRequestAmount();
 

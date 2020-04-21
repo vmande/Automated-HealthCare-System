@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author MyPC1
+ * @author 
  */
 public abstract class Enterprise extends Organization {
 

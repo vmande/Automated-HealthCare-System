@@ -14,10 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
-/**
- *
- * @author raunak
- */
+
 public class ManageNetworkJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;

@@ -7,7 +7,6 @@ package userinterface.GovernmentSecretaryRole;
 
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Organization.SecretaryOrganization;
 import Business.Organization.TreasurerOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.GovernmentFundRequest;
@@ -15,11 +14,10 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import userinterface.HealthcareOfficerRole.OfficerWorkAreaJPanel;
 
 /**
  *
- * @author Sourav
+ * @author 
  */
 public class SecretaryProcessWorkRequestJPanel extends javax.swing.JPanel {
 

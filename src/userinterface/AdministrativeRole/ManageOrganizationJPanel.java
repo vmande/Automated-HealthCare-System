@@ -17,7 +17,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author raunak
+ * @author
  */
 public class ManageOrganizationJPanel extends javax.swing.JPanel {
 

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ankit
+ * @author 
  */
 public class HealthCareOfficerOrganization extends Organization {
 
