@@ -38,7 +38,6 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
     private AccountantBillingRequest accountBillingRequest;
     private EcoSystem ecosystem;
     private double payableAmount;
-   
 
     /**
      * Creates new form AccountantWorkRequestJPanel
@@ -276,60 +275,58 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
         String insuranceCompany = accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompany();
         double claimAmount = Double.parseDouble(txtInsuranceClaimAmount.getText());
         double billAmount = accountBillingRequest.getBillingAmount();
-        if(("Patient Transaction Completed").equals(accountBillingRequest.getStatus())){
+        if (("Patient Transaction Completed").equals(accountBillingRequest.getStatus())) {
             JOptionPane.showMessageDialog(null, "Insurance request sent for claim");
             return;
         }
-            Insurance insurance = new Insurance(policyName, insuranceCompany, claimAmount);
-            insurance.setCoverage(accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoverage());
-            InsuranceCustomer insuranceCustomer = new InsuranceCustomer(insurance, policyNumber);
-            insuranceCustomer.setCustomerFirstName(txtFirstName.getText().trim());
-            insuranceCustomer.setCustomerLastName((txtLastName.getText().trim()));
+        Insurance insurance = new Insurance(policyName, insuranceCompany, claimAmount);
+        insurance.setCoverage(accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getCoverage());
+        InsuranceCustomer insuranceCustomer = new InsuranceCustomer(insurance, policyNumber);
+        insuranceCustomer.setCustomerFirstName(txtFirstName.getText().trim());
+        insuranceCustomer.setCustomerLastName((txtLastName.getText().trim()));
 
-            InsuranceWorkRequest insuranceWorkRequest = new InsuranceWorkRequest();
-            insuranceWorkRequest.setInsuranceCompany(insuranceCompany);
-            insuranceWorkRequest.setPolicyNumber(policyNumber);
-            insuranceWorkRequest.setPolicyName(policyName);
-            insuranceWorkRequest.setSsn(ssn);
-            insuranceWorkRequest.setClaimAmount(claimAmount);
-            insuranceWorkRequest.setBillAmount(billAmount);
-            insuranceWorkRequest.setHealthCenter(enterprise.getName());
+        InsuranceWorkRequest insuranceWorkRequest = new InsuranceWorkRequest();
+        insuranceWorkRequest.setInsuranceCompany(insuranceCompany);
+        insuranceWorkRequest.setPolicyNumber(policyNumber);
+        insuranceWorkRequest.setPolicyName(policyName);
+        insuranceWorkRequest.setSsn(ssn);
+        insuranceWorkRequest.setClaimAmount(claimAmount);
+        insuranceWorkRequest.setBillAmount(billAmount);
+        insuranceWorkRequest.setHealthCenter(enterprise.getName());
 
-            insuranceWorkRequest.setSender(userAccount);
-            insuranceWorkRequest.setStatus("Sent");
-            insuranceWorkRequest.setInsuranceCustomer(insuranceCustomer);
-            
+        insuranceWorkRequest.setSender(userAccount);
+        insuranceWorkRequest.setStatus("Sent");
+        insuranceWorkRequest.setInsuranceCustomer(insuranceCustomer);
 
-            Organization org = null;
-            InsuranceCompanyEnterprise matchedInsuranceCompany = null;
+        Organization org = null;
+        InsuranceCompanyEnterprise matchedInsuranceCompany = null;
 
-            List<Network> networks = ecosystem.getNetworks();
-            for (Network network : networks) {
-                List<Enterprise> enterprises = network.getEnterpriseDirectory().getEnterpriseList();
-                for (Enterprise enterprise : enterprises) {
-                    if (enterprise.getName().equalsIgnoreCase(accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompany())) {
-                        matchedInsuranceCompany = (InsuranceCompanyEnterprise) enterprise;
-                    }
+        List<Network> networks = ecosystem.getNetworks();
+        for (Network network : networks) {
+            List<Enterprise> enterprises = network.getEnterpriseDirectory().getEnterpriseList();
+            for (Enterprise enterprise : enterprises) {
+                if (enterprise.getName().equalsIgnoreCase(accountBillingRequest.getPatient().getInsuranceCustomer().getInsurance().getInsuranceCompany())) {
+                    matchedInsuranceCompany = (InsuranceCompanyEnterprise) enterprise;
                 }
             }
+        }
 
-            for (Organization organization : matchedInsuranceCompany.getOrganizationDirectory().getOrganizations()) {
-                if (organization instanceof InsuranceAgentOrganization) {
-                    org = organization;
-                    break;
-                }
+        for (Organization organization : matchedInsuranceCompany.getOrganizationDirectory().getOrganizations()) {
+            if (organization instanceof InsuranceAgentOrganization) {
+                org = organization;
+                break;
             }
-            if (org != null) {
-                org.getWorkQueue().getWorkRequests().add(insuranceWorkRequest);
-                userAccount.getWorkQueue().getWorkRequests().add(insuranceWorkRequest);
-                accountBillingRequest.setStatus("Patient Transaction Completed");
-                accountBillingRequest.getPatient().setIsTreatmentFinished(true);
-                JOptionPane.showMessageDialog(null, "Money received from patient: " + String.format("%.2f", String.valueOf(payableAmount))+". Insurance Claim Request Raised Successfully for amount:" + claimAmount);
-           btnSendRequestForInsurance.setEnabled(false);
-            }
-            
-            
-         
+        }
+        if (org != null) {
+            org.getWorkQueue().getWorkRequests().add(insuranceWorkRequest);
+            userAccount.getWorkQueue().getWorkRequests().add(insuranceWorkRequest);
+            accountBillingRequest.setStatus("Patient Transaction Completed");
+            accountBillingRequest.getPatient().setIsTreatmentFinished(true);
+            JOptionPane.showMessageDialog(null, "Money received from patient: " + String.format("%.2f", String.valueOf(payableAmount)) + ". Insurance Claim Request Raised Successfully for amount:" + claimAmount);
+            btnSendRequestForInsurance.setEnabled(false);
+        }
+
+
     }//GEN-LAST:event_btnSendRequestForInsuranceActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -345,15 +342,6 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void btnCOllectCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCOllectCashActionPerformed
-//        accountBillingRequest.setStatus("Patient Transaction Completed");
-//        JOptionPane.showMessageDialog(null, "Amount received from Patient");
-//        btnCOllectCash.setEnabled(false);
-
-//        EmailBillingInformationToPatient emailBillingInformationToPatient = new EmailBillingInformationToPatient(userProcessContainer,accountBillingRequest.getPatient());
-//        container.add("PatientRegistrationForm", registerPatientForm);
-//        CardLayout cardLayout = (CardLayout) container.getLayout();
-//        cardLayout.next(container);
-      
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.add("EmailBillingInformationToPatient", new EmailBillingInformationToPatient(userProcessContainer, accountBillingRequest));
         layout.next(userProcessContainer);
@@ -402,14 +390,11 @@ public class AccountantProcessRequestJPanel extends javax.swing.JPanel {
         txtInsurancePolicyName.setText(policyName);
         txtInsuranceClaimAmount.setText(String.valueOf(claimAmount));
         txtPayableAmount.setText(String.valueOf(df2.format(payableAmount)));
-        
-        if(claimAmount>0)
-        {
+
+        if (claimAmount > 0) {
             btnSendRequestForInsurance.setEnabled(true);
             btnCOllectCash.setEnabled(false);
-        }
-        else
-        {
+        } else {
             btnCOllectCash.setEnabled(true);
             btnSendRequestForInsurance.setEnabled(false);
         }
