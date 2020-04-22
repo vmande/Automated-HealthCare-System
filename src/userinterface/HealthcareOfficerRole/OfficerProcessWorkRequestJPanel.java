@@ -6,22 +6,18 @@
 package userinterface.HealthcareOfficerRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.Organization.SecretaryOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.GovernmentFundRequest;
-import Business.WorkQueue.LabTestWorkRequest;
-import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import userinterface.DoctorRole.DoctorWorkAreaJPanel;
 
 /**
  *
- * @author Sourav
+ * @author 
  */
 public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
 
@@ -207,30 +203,29 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
             return;
         } else {
             governmentFundRequest.setMessage(message);
-            
-            int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to proceed?");
-            
-            
-            if (dialogResult == JOptionPane.YES_OPTION) {
-            
-            governmentFundRequest.setSender(userAccount);
-            governmentFundRequest.setStatus("Sent to Secretary");
 
-            Organization org = null;
-            for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
-                if (organization instanceof SecretaryOrganization) {
-                    org = organization;
-                    break;
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to proceed?");
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+
+                governmentFundRequest.setSender(userAccount);
+                governmentFundRequest.setStatus("Sent to Secretary");
+
+                Organization org = null;
+                for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
+                    if (organization instanceof SecretaryOrganization) {
+                        org = organization;
+                        break;
+                    }
                 }
-            }
-            if (org != null) {
-                org.getWorkQueue().getWorkRequests().add(governmentFundRequest);
-                userAccount.getWorkQueue().getWorkRequests().add(governmentFundRequest);
-            }
-            JOptionPane.showMessageDialog(null, "Request to Secretary Successful!!!");
-            messageTxt.setText("");
-            btnReject.setEnabled(false);
-            sendRequestToSecretaryBtn.setEnabled(false);
+                if (org != null) {
+                    org.getWorkQueue().getWorkRequests().add(governmentFundRequest);
+                    userAccount.getWorkQueue().getWorkRequests().add(governmentFundRequest);
+                }
+                JOptionPane.showMessageDialog(null, "Request to Secretary Successful!!!");
+                messageTxt.setText("");
+                btnReject.setEnabled(false);
+                sendRequestToSecretaryBtn.setEnabled(false);
             }
             messageTxt.setText("");
         }
@@ -245,15 +240,14 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
         } else {
             governmentFundRequest.setMessage(message);
             int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to proceed?");
-            
-            
+
             if (dialogResult == JOptionPane.YES_OPTION) {
                 governmentFundRequest.setStatus("Rejected");
                 messageTxt.setText("");
-            btnReject.setEnabled(false);
-            sendRequestToSecretaryBtn.setEnabled(false);
+                btnReject.setEnabled(false);
+                sendRequestToSecretaryBtn.setEnabled(false);
             }
-           
+
             messageTxt.setText("");
         }
     }//GEN-LAST:event_btnRejectActionPerformed

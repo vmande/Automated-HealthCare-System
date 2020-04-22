@@ -7,16 +7,16 @@ package userinterface.InsuranceFinanceRole;
 
 import Business.Enterprise.Enterprise;
 import Business.UserAccount.UserAccount;
-
-import Business.WorkQueue.GovernmentFundRequest;
-
 import Business.WorkQueue.InsuranceWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-
+/**
+ *
+ * @author Vaishnavi
+ */
 public class InsuranceFinanceProcessRequest extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;

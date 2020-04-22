@@ -8,17 +8,15 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.HealthCareOfficerOrganization;
 import Business.Organization.Organization;
 import Business.Organization.SecretaryOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.GovernmentSecretaryRole.SecretaryWorkAreaJPanel;
-import userinterface.HealthcareOfficerRole.OfficerWorkAreaJPanel;
 
 /**
  *
- * @author ankit
+ * @author 
  */
 public class GovernmentSecretaries extends Role{
 

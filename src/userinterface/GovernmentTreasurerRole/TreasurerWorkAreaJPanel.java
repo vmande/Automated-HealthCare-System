@@ -6,22 +6,20 @@
 package userinterface.GovernmentTreasurerRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Organization.HealthCareOfficerOrganization;
 import Business.Organization.Organization;
 import Business.Organization.TreasurerOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.GovernmentFundRequest;
-import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import userinterface.LabAssistantRole.ProcessWorkRequestJPanel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author Sourav
+ * @author
  */
 public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -159,9 +157,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Can't assign this work request, as the work request is in " + request.getStatus() + " status", "Warning!", JOptionPane.WARNING_MESSAGE);
             }
         }
-//        request.setReceiver(userAccount);
-//        request.setStatus("Pending on " + request.getReceiver().getEmployee().getName());
-//        populateTable();
+
     }//GEN-LAST:event_btnAssignActionPerformed
 
     private void requestGovSecretaryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestGovSecretaryBtnActionPerformed
@@ -217,7 +213,7 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
             } else {
                 row[1] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
             }
-            //row[1] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+
             row[2] = status;
             row[3] = ((GovernmentFundRequest) request).getRequestAmount();
             row[4] = ((GovernmentFundRequest) request).getMessage();
@@ -225,6 +221,8 @@ public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
 
             model.addRow(row);
         }
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        workRequestJTable.setRowSorter(sorter);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
